@@ -16,6 +16,10 @@ class AppConfig(BaseModel):
     project_key: str = Field(..., description="Jira project key")
     jql: str = Field(..., description="JQL query for issue discovery")
     cache_dir: Path = Field(default=Path("cache"), description="Local cache directory")
+    enable_per_issue_fallback: bool = Field(
+        default=False,
+        description="After bulk changelog fetch, per-issue API for keys missing from bulk results",
+    )
 
     @field_validator("jira_url")
     @classmethod

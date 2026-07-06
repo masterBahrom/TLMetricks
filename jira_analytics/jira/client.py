@@ -305,12 +305,16 @@ class JiraClient:
         """
         Fetch changelogs for up to 1000 issues via bulk changelog API.
 
-        Paginates with nextPageToken until all changelog entries are retrieved.
+        Paginates with nextPageToken until the token is absent. The bulk endpoint
+        does not return isLast — only nextPageToken.
         """
         all_changelogs: list[dict[str, Any]] = []
         next_page_token: str | None = None
+        seen_tokens: set[str] = set()
+        page = 0
 
         while True:
+            page += 1
             body: dict[str, Any] = {
                 "issueIdsOrKeys": issue_keys,
                 "maxResults": max_results,
@@ -324,12 +328,21 @@ class JiraClient:
 
             if isinstance(data, list):
                 all_changelogs.extend(data)
+                logger.info(
+                    "Bulk changelog page %d: issueChangeLogs=%d changeHistories=%d has_nextPageToken=false",
+                    page,
+                    len(data),
+                    0,
+                )
                 break
 
-            # Bulk API returns issueChangeLogs with nested changeHistories
             issue_change_logs = data.get("issueChangeLogs", [])
             if issue_change_logs:
                 all_changelogs.extend(issue_change_logs)
+                page_histories = sum(
+                    len(entry.get("changeHistories", [])) for entry in issue_change_logs
+                )
+                page_issues = len(issue_change_logs)
             else:
                 changelogs = (
                     data.get("changelogValues")
@@ -337,11 +350,29 @@ class JiraClient:
                     or []
                 )
                 all_changelogs.extend(changelogs)
+                page_histories = len(changelogs)
+                page_issues = len(changelogs)
 
-            next_page_token = data.get("nextPageToken")
-            is_last = data.get("isLast", True)
+            token = data.get("nextPageToken")
+            logger.info(
+                "Bulk changelog page %d: issueChangeLogs=%d changeHistories=%d has_nextPageToken=%s",
+                page,
+                page_issues,
+                page_histories,
+                token is not None,
+            )
 
-            if is_last or not next_page_token:
+            if not token:
                 break
+
+            if token in seen_tokens:
+                logger.warning(
+                    "Bulk changelog pagination stopped: repeated nextPageToken on page %d",
+                    page,
+                )
+                break
+
+            seen_tokens.add(token)
+            next_page_token = token
 
         return all_changelogs

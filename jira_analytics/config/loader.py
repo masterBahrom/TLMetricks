@@ -62,6 +62,7 @@ def load_config(config_path: Path | None = None) -> AppConfig:
         "project_key": os.getenv("JIRA_PROJECT_KEY") or raw.get("project_key"),
         "jql": os.getenv("JIRA_JQL") or raw.get("jql"),
         "cache_dir": os.getenv("JIRA_CACHE_DIR") or raw.get("cache_dir", "cache"),
+        "enable_per_issue_fallback": raw.get("enable_per_issue_fallback", False),
     }
 
     missing = [key for key in ("jira_url", "project_key", "jql") if not merged.get(key)]

@@ -44,6 +44,7 @@ class TestNormalWorkflow:
         assert metrics.cycle_time_seconds == 72 * 3600
         assert metrics.total_active_time_seconds == 72 * 3600
         assert metrics.buffer_time_seconds == 3600
+        assert metrics.buffer_time_hours == 1.0
         assert metrics.terminal_time_seconds == 31 * 3600
         assert metrics.time_to_first_progress_seconds == 3600
         assert metrics.flow_efficiency_percent is not None

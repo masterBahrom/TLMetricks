@@ -110,6 +110,36 @@ Reads **only** `cache/metrics.json`, `cache/analytics.json`, and `cache/workflow
 
 Sidebar filters apply to issue-level views; global KPIs always match `analytics.json`.
 
+### Manual data refresh from Dashboard
+
+The dashboard loads existing `cache/metrics.json` and `cache/analytics.json` on startup. It does **not** call Jira automatically.
+
+Use the sidebar **Get Data** button (under the version line) to run the full pipeline:
+
+1. `python run.py` — sync from Jira  
+2. `python run_timelines.py`  
+3. `python run_metrics.py`  
+4. `python run_analytics.py`  
+5. `python run_report.py`  
+
+Until the run finishes, the dashboard keeps showing the previous cached data. On success, cache is cleared, files are reloaded, and you see **Data refreshed successfully**. If a step fails, the error is shown and old data remains.
+
+**Local:** set credentials in `.env` or your shell:
+
+```bash
+export JIRA_EMAIL="you@company.com"
+export JIRA_API_TOKEN="your-api-token"
+```
+
+**Streamlit Cloud:** add secrets in the app settings (or `.streamlit/secrets.toml` locally):
+
+```toml
+JIRA_EMAIL = "you@company.com"
+JIRA_API_TOKEN = "your-api-token"
+```
+
+If credentials are missing, the dashboard shows an error and does not call Jira.
+
 ## Workflow Configuration
 
 Metrics never rely on the literal status name `"Done"`. Configure terminal and active statuses in:
