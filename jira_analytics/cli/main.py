@@ -62,10 +62,18 @@ def main() -> int:
             validator.validate_issues(issues)
 
             issue_keys = [issue["key"] for issue in issues if "key" in issue]
+            key_to_id = {
+                str(issue["key"]): str(issue["id"])
+                for issue in issues
+                if issue.get("key") and issue.get("id")
+            }
 
             # 3. Changelog download
-            changelog_loader = ChangelogLoader(client)
-            changelog = changelog_loader.load(issue_keys)
+            changelog_loader = ChangelogLoader(
+                client,
+                enable_per_issue_fallback=config.enable_per_issue_fallback,
+            )
+            changelog = changelog_loader.load(issue_keys, key_to_id=key_to_id)
             cache.save_changelog(changelog)
             validator.validate_changelog(changelog)
 

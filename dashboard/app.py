@@ -14,7 +14,8 @@ if str(ROOT) not in sys.path:
 
 from dashboard import DASHBOARD_VERSION
 from dashboard.filters import FilterState, render_filters
-from dashboard.loader import load_dashboard_data
+from dashboard.loader import clear_loader_cache, load_dashboard_data
+from dashboard.refresh import check_credentials, run_pipeline
 from dashboard.tables import issues_to_dataframe
 from dashboard.views import (
     aging,
@@ -107,6 +108,50 @@ def _render_exports(data) -> None:
     )
 
 
+def _render_get_data(cache_dir: str) -> bool:
+    """Run the Jira pipeline when the user clicks Get Data. Returns True to rerun."""
+    refresh_running = st.session_state.get("_refresh_running", False)
+    if not st.sidebar.button("Get Data", disabled=refresh_running, key="get_data_btn"):
+        return False
+
+    ok, error = check_credentials()
+    if not ok:
+        st.sidebar.error(error)
+        return False
+
+    st.session_state["_refresh_running"] = True
+    try:
+        with st.sidebar.status("Refreshing data from Jira...", expanded=True) as status:
+            def _on_start(label: str, _script: str) -> None:
+                status.write(label)
+
+            def _on_complete(step) -> None:
+                if step.ok:
+                    status.write(f"✓ {step.label}")
+                else:
+                    status.update(label=f"Failed: {step.label}", state="error")
+
+            result = run_pipeline(ROOT, on_step_start=_on_start, on_step_complete=_on_complete)
+
+            if result.success:
+                status.update(label="Data refreshed successfully", state="complete")
+                clear_loader_cache()
+                load_dashboard_data(cache_dir)
+                st.session_state["_refresh_success"] = True
+                return True
+
+            status.update(label="Refresh failed", state="error")
+            if result.failed_step:
+                st.sidebar.error(f"Refresh failed at: {result.failed_step}")
+            elif result.error_message:
+                st.sidebar.error(result.error_message)
+            if result.stderr:
+                st.sidebar.code(result.stderr[:4000])
+            return False
+    finally:
+        st.session_state["_refresh_running"] = False
+
+
 def _validate_data(data) -> bool:
     """Return False and show UI warning if core data is missing."""
     ok = True
@@ -156,6 +201,12 @@ def main() -> None:
 
     st.sidebar.title("Jira Analytics")
     st.sidebar.caption(f"v{DASHBOARD_VERSION} · loaded in {data.load_time_seconds:.3f}s")
+
+    if st.session_state.pop("_refresh_success", False):
+        st.sidebar.success("Data refreshed successfully")
+
+    if _render_get_data(cache_dir):
+        st.rerun()
 
     filters = render_filters(data)
     page_name = st.sidebar.radio("Navigate", list(PAGES.keys()), key="dashboard_page")

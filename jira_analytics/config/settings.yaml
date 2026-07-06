@@ -2,3 +2,4 @@ jira_url: https://renmoney.atlassian.net
 project_key: TL
 jql: "project = TL"
 cache_dir: cache
+enable_per_issue_fallback: true

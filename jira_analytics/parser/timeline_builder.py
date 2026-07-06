@@ -47,7 +47,12 @@ class TimelineBuilder:
         changelog_data: list[dict[str, Any]],
     ) -> TimelinesDocument:
         """Build timelines for every issue in the cache."""
-        changelog_by_key = index_changelog_by_issue(changelog_data)
+        id_to_key = {
+            str(issue["id"]): str(issue["key"])
+            for issue in issues
+            if issue.get("id") and issue.get("key")
+        }
+        changelog_by_key = index_changelog_by_issue(changelog_data, id_to_key)
         document = TimelinesDocument(generated_at=self._reference_time)
 
         for issue in issues:
@@ -56,7 +61,7 @@ class TimelineBuilder:
                 continue
             timeline = self.build_issue_timeline(
                 issue,
-                changelog_by_key.get(issue_key, []),
+                changelog_by_key.get(str(issue_key), []),
             )
             document.timelines[issue_key] = timeline
 
@@ -326,26 +331,66 @@ class TimelineBuilder:
                 self._refresh_duration(last)
 
 
-def index_changelog_by_issue(changelog_data: list[dict[str, Any]]) -> dict[str, list[dict[str, Any]]]:
+def _extract_histories(record: dict[str, Any]) -> list[dict[str, Any]]:
+    """Pull history list from bulk or per-issue changelog record shapes."""
+    histories = (
+        record.get("changeHistories")
+        or record.get("histories")
+        or record.get("changelog", {}).get("histories")
+        or []
+    )
+    return histories if isinstance(histories, list) else []
+
+
+def _resolve_issue_key(
+    record: dict[str, Any],
+    id_to_key: dict[str, str],
+) -> str | None:
+    """Resolve issue key from explicit key fields or issueId via id_to_key map."""
+    for field in ("issueKey", "issue_key", "key"):
+        value = record.get(field)
+        if value:
+            return str(value)
+
+    for field in ("issueId", "issue_id", "id"):
+        raw_id = record.get(field)
+        if raw_id is None:
+            continue
+        mapped = id_to_key.get(str(raw_id))
+        if mapped:
+            return mapped
+
+    return None
+
+
+def index_changelog_by_issue(
+    changelog_data: list[dict[str, Any]],
+    id_to_key: dict[str, str] | None = None,
+) -> dict[str, list[dict[str, Any]]]:
     """Group raw changelog records by issue key."""
+    lookup = id_to_key or {}
     by_key: dict[str, list[dict[str, Any]]] = {}
 
     for record in changelog_data:
-        issue_key = record.get("issueKey") or record.get("issue_key")
-        histories = (
-            record.get("changeHistories")
-            or record.get("histories")
-            or record.get("changelog", {}).get("histories")
-            or []
-        )
+        histories = _extract_histories(record)
+        issue_key = _resolve_issue_key(record, lookup)
 
         if issue_key:
-            by_key.setdefault(str(issue_key), []).extend(histories)
+            by_key.setdefault(issue_key, []).extend(histories)
             continue
 
         if "items" in record:
-            key = record.get("issueKey", "UNKNOWN")
+            key = _resolve_issue_key(record, lookup) or record.get("issueKey", "UNKNOWN")
             by_key.setdefault(str(key), []).append(record)
+            continue
+
+        issue_id = record.get("issueId") or record.get("issue_id") or record.get("id")
+        logger.warning(
+            "Unmapped changelog record: issueId=%s keys=%s history_count=%d",
+            issue_id,
+            sorted(record.keys()),
+            len(histories),
+        )
 
     return by_key
 

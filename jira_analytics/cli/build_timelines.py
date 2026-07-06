@@ -9,9 +9,10 @@ from jira_analytics.cache import CacheStore
 from jira_analytics.config import load_cache_config
 from jira_analytics.config.loader import ConfigError
 from jira_analytics.parser.status_registry import build_status_registry
-from jira_analytics.parser.timeline_builder import TimelineBuilder
+from jira_analytics.parser.timeline_builder import TimelineBuilder, index_changelog_by_issue
 from jira_analytics.utils import setup_logging
 from jira_analytics.validators import TimelineValidator
+from jira_analytics.validators.timeline_data_quality import assess_timeline_data_quality
 
 logger = logging.getLogger(__name__)
 
@@ -55,7 +56,16 @@ def main() -> int:
     cache.save_status_registry(registry)
 
     builder = TimelineBuilder(registry)
+    id_to_key = {
+        str(issue["id"]): str(issue["key"])
+        for issue in issues
+        if issue.get("id") and issue.get("key")
+    }
+    changelog_by_key = index_changelog_by_issue(changelog, id_to_key)
     document = builder.build_all(issues, changelog)
+
+    quality = assess_timeline_data_quality(issues, changelog_by_key, document)
+    quality.log_summary()
 
     validator = TimelineValidator(reference_time=document.generated_at)
     report = validator.validate_document(document)
@@ -69,6 +79,13 @@ def main() -> int:
 
     print(f"Status registry: {len(registry.statuses)} statuses")
     print(f"Timelines built: {document.issue_count} issues")
+    print(
+        f"Data quality: changelog={quality.issues_with_changelog} "
+        f"transitions={quality.issues_with_status_transitions} "
+        f"single_period={quality.issues_single_period}"
+    )
+    for warning in quality.warnings:
+        print(f"  WARN: {warning}")
     print(f"Validation: {report.error_count} errors, {report.warning_count} warnings")
 
     if report.issues:
