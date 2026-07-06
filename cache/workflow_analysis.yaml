@@ -1,0 +1,40 @@
+# TL Engineering Workflow — status classification for metrics
+#
+# Status names are matched case-insensitively.
+# Never rely on Jira status categories alone.
+
+terminal_statuses:
+  - Post Deployment
+  - Done
+
+cancelled_statuses:
+  - Cancelled
+
+# Queue / buffer — nobody actively working
+queue_statuses:
+  - Backlog
+  - To Do
+  - Ready for QA
+  - Ready for Deployment
+
+# Active work — developers, reviewers, testers
+active_statuses:
+  - In Progress
+
+review_statuses:
+  - Review
+
+qa_statuses:
+  - QA IN PROGRESS
+
+deployment_queue_statuses:
+  - Ready for Deployment
+
+# Legacy waiting list (non-buffer statuses not in TL workflow)
+waiting_statuses:
+  - Waiting
+  - Blocked
+
+bug_issue_types:
+  - Bug
+  - HOT-FIX

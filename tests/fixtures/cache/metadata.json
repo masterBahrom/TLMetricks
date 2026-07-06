@@ -1,0 +1,19 @@
+{
+  "project_key": "TL",
+  "jira_url": "https://renmoney.atlassian.net",
+  "statuses": [
+    {"id": "1", "name": "To Do", "category_key": "new", "category_name": "To Do"},
+    {"id": "2", "name": "In Progress", "category_key": "indeterminate", "category_name": "In Progress"},
+    {"id": "3", "name": "Code Review", "category_key": "indeterminate", "category_name": "In Progress"},
+    {"id": "4", "name": "QA", "category_key": "indeterminate", "category_name": "In Progress"},
+    {"id": "5", "name": "Done", "category_key": "done", "category_name": "Done"}
+  ],
+  "workflow_statuses": [
+    {"id": "1", "name": "To Do", "category_key": "new", "category_name": "To Do"},
+    {"id": "2", "name": "In Progress", "category_key": "indeterminate", "category_name": "In Progress"},
+    {"id": "3", "name": "Code Review", "category_key": "indeterminate", "category_name": "In Progress"},
+    {"id": "4", "name": "QA", "category_key": "indeterminate", "category_name": "In Progress"},
+    {"id": "5", "name": "Done", "category_key": "done", "category_name": "Done"}
+  ],
+  "boards": [{"id": 1, "name": "TL Board", "type": "scrum"}]
+}

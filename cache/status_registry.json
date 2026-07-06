@@ -1,0 +1,1775 @@
+{
+  "generated_at": "2026-07-06T08:41:44.420036Z",
+  "statuses": {
+    "10348": {
+      "status_id": "10348",
+      "status_name": "READY TO TEST",
+      "status_category": "indeterminate"
+    },
+    "10285": {
+      "status_id": "10285",
+      "status_name": "Blocked",
+      "status_category": "indeterminate"
+    },
+    "10284": {
+      "status_id": "10284",
+      "status_name": "Ready for UAT",
+      "status_category": "indeterminate"
+    },
+    "10281": {
+      "status_id": "10281",
+      "status_name": "PDT",
+      "status_category": "indeterminate"
+    },
+    "10280": {
+      "status_id": "10280",
+      "status_name": "Deployments",
+      "status_category": "indeterminate"
+    },
+    "10279": {
+      "status_id": "10279",
+      "status_name": "In Sprint",
+      "status_category": "indeterminate"
+    },
+    "10278": {
+      "status_id": "10278",
+      "status_name": "IN PROGRESS - EXTERNAL QA",
+      "status_category": "indeterminate"
+    },
+    "10277": {
+      "status_id": "10277",
+      "status_name": "IN PROGRESS - INFO. GATHERING",
+      "status_category": "indeterminate"
+    },
+    "10276": {
+      "status_id": "10276",
+      "status_name": "IN PROGRESS - INTERNAL QA",
+      "status_category": "indeterminate"
+    },
+    "10275": {
+      "status_id": "10275",
+      "status_name": "IN PROGRESS - BUILD PHASE",
+      "status_category": "indeterminate"
+    },
+    "10341": {
+      "status_id": "10341",
+      "status_name": "Awaits homework",
+      "status_category": "new"
+    },
+    "10342": {
+      "status_id": "10342",
+      "status_name": "Approved & Ready for QA",
+      "status_category": "new"
+    },
+    "10343": {
+      "status_id": "10343",
+      "status_name": "Shipped off for development",
+      "status_category": "done"
+    },
+    "10347": {
+      "status_id": "10347",
+      "status_name": "CODE REVIEW",
+      "status_category": "indeterminate"
+    },
+    "10236": {
+      "status_id": "10236",
+      "status_name": "Automating",
+      "status_category": "indeterminate"
+    },
+    "10349": {
+      "status_id": "10349",
+      "status_name": "TESTING",
+      "status_category": "indeterminate"
+    },
+    "10260": {
+      "status_id": "10260",
+      "status_name": "Sign Off",
+      "status_category": "indeterminate"
+    },
+    "10259": {
+      "status_id": "10259",
+      "status_name": "Abandoned",
+      "status_category": "done"
+    },
+    "10258": {
+      "status_id": "10258",
+      "status_name": "RFD",
+      "status_category": "indeterminate"
+    },
+    "10257": {
+      "status_id": "10257",
+      "status_name": "Blocked",
+      "status_category": "indeterminate"
+    },
+    "10256": {
+      "status_id": "10256",
+      "status_name": "Validation",
+      "status_category": "indeterminate"
+    },
+    "10350": {
+      "status_id": "10350",
+      "status_name": "READY TO UAT",
+      "status_category": "indeterminate"
+    },
+    "10351": {
+      "status_id": "10351",
+      "status_name": "BLOCKED",
+      "status_category": "indeterminate"
+    },
+    "10246": {
+      "status_id": "10246",
+      "status_name": "Ready for UAT",
+      "status_category": "indeterminate"
+    },
+    "10245": {
+      "status_id": "10245",
+      "status_name": "Ready for review",
+      "status_category": "indeterminate"
+    },
+    "10241": {
+      "status_id": "10241",
+      "status_name": "Bocked",
+      "status_category": "indeterminate"
+    },
+    "10240": {
+      "status_id": "10240",
+      "status_name": "HOT-FIX-BUGS",
+      "status_category": "indeterminate"
+    },
+    "10239": {
+      "status_id": "10239",
+      "status_name": "Ready for deployment",
+      "status_category": "indeterminate"
+    },
+    "10238": {
+      "status_id": "10238",
+      "status_name": "Failed Post Deployment",
+      "status_category": "indeterminate"
+    },
+    "10237": {
+      "status_id": "10237",
+      "status_name": "FAILED POST DEPLOYMENTS",
+      "status_category": "indeterminate"
+    },
+    "10306": {
+      "status_id": "10306",
+      "status_name": "Next Sprint Items",
+      "status_category": "indeterminate"
+    },
+    "10305": {
+      "status_id": "10305",
+      "status_name": "Blocker",
+      "status_category": "indeterminate"
+    },
+    "10304": {
+      "status_id": "10304",
+      "status_name": "Backlog",
+      "status_category": "indeterminate"
+    },
+    "10303": {
+      "status_id": "10303",
+      "status_name": "Under-review",
+      "status_category": "indeterminate"
+    },
+    "10307": {
+      "status_id": "10307",
+      "status_name": "ON HOLD",
+      "status_category": "indeterminate"
+    },
+    "10324": {
+      "status_id": "10324",
+      "status_name": "APPROVAL",
+      "status_category": "indeterminate"
+    },
+    "10325": {
+      "status_id": "10325",
+      "status_name": "APPROVAL NOTIF",
+      "status_category": "indeterminate"
+    },
+    "10326": {
+      "status_id": "10326",
+      "status_name": "ENGINEERING",
+      "status_category": "indeterminate"
+    },
+    "10327": {
+      "status_id": "10327",
+      "status_name": "DEVELOPMENT",
+      "status_category": "indeterminate"
+    },
+    "10297": {
+      "status_id": "10297",
+      "status_name": "ON HOLD",
+      "status_category": "indeterminate"
+    },
+    "10328": {
+      "status_id": "10328",
+      "status_name": "STAGE TEST",
+      "status_category": "indeterminate"
+    },
+    "10329": {
+      "status_id": "10329",
+      "status_name": "PROD DEPLOY",
+      "status_category": "indeterminate"
+    },
+    "10330": {
+      "status_id": "10330",
+      "status_name": "PROD NOTIF",
+      "status_category": "indeterminate"
+    },
+    "10292": {
+      "status_id": "10292",
+      "status_name": "REVIEW",
+      "status_category": "indeterminate"
+    },
+    "10291": {
+      "status_id": "10291",
+      "status_name": "Ready for Review",
+      "status_category": "indeterminate"
+    },
+    "10331": {
+      "status_id": "10331",
+      "status_name": "PROD TEST",
+      "status_category": "indeterminate"
+    },
+    "10339": {
+      "status_id": "10339",
+      "status_name": "Offer",
+      "status_category": "new"
+    },
+    "10340": {
+      "status_id": "10340",
+      "status_name": "Homework",
+      "status_category": "indeterminate"
+    },
+    "3": {
+      "status_id": "3",
+      "status_name": "In Progress",
+      "status_category": "indeterminate"
+    },
+    "400": {
+      "status_id": "400",
+      "status_name": "Building",
+      "status_category": "indeterminate"
+    },
+    "10003": {
+      "status_id": "10003",
+      "status_name": "To Do",
+      "status_category": "new"
+    },
+    "10004": {
+      "status_id": "10004",
+      "status_name": "In Review",
+      "status_category": "indeterminate"
+    },
+    "10005": {
+      "status_id": "10005",
+      "status_name": "Done",
+      "status_category": "done"
+    },
+    "10006": {
+      "status_id": "10006",
+      "status_name": "To Do",
+      "status_category": "new"
+    },
+    "10007": {
+      "status_id": "10007",
+      "status_name": "In Progress",
+      "status_category": "indeterminate"
+    },
+    "10008": {
+      "status_id": "10008",
+      "status_name": "Done",
+      "status_category": "done"
+    },
+    "10009": {
+      "status_id": "10009",
+      "status_name": "To Do",
+      "status_category": "new"
+    },
+    "10010": {
+      "status_id": "10010",
+      "status_name": "BLOCKED",
+      "status_category": "indeterminate"
+    },
+    "10011": {
+      "status_id": "10011",
+      "status_name": "Done",
+      "status_category": "done"
+    },
+    "10012": {
+      "status_id": "10012",
+      "status_name": "IN QA",
+      "status_category": "indeterminate"
+    },
+    "10013": {
+      "status_id": "10013",
+      "status_name": "To Do",
+      "status_category": "new"
+    },
+    "10014": {
+      "status_id": "10014",
+      "status_name": "In Progress",
+      "status_category": "indeterminate"
+    },
+    "10015": {
+      "status_id": "10015",
+      "status_name": "Done",
+      "status_category": "done"
+    },
+    "10016": {
+      "status_id": "10016",
+      "status_name": "IN REVIEW",
+      "status_category": "indeterminate"
+    },
+    "10021": {
+      "status_id": "10021",
+      "status_name": "Backlog",
+      "status_category": "new"
+    },
+    "10022": {
+      "status_id": "10022",
+      "status_name": "Selected for Development",
+      "status_category": "new"
+    },
+    "10026": {
+      "status_id": "10026",
+      "status_name": "Parking Lot",
+      "status_category": "new"
+    },
+    "10027": {
+      "status_id": "10027",
+      "status_name": "Assigned to Developer",
+      "status_category": "new"
+    },
+    "10028": {
+      "status_id": "10028",
+      "status_name": "Ready for QA",
+      "status_category": "indeterminate"
+    },
+    "10029": {
+      "status_id": "10029",
+      "status_name": "Tested OK",
+      "status_category": "indeterminate"
+    },
+    "10030": {
+      "status_id": "10030",
+      "status_name": "To be Deployed",
+      "status_category": "indeterminate"
+    },
+    "10031": {
+      "status_id": "10031",
+      "status_name": "Deployed",
+      "status_category": "indeterminate"
+    },
+    "10032": {
+      "status_id": "10032",
+      "status_name": "Post Deployment Passed",
+      "status_category": "done"
+    },
+    "10033": {
+      "status_id": "10033",
+      "status_name": "Decommissioned",
+      "status_category": "done"
+    },
+    "10034": {
+      "status_id": "10034",
+      "status_name": "Packing Lot",
+      "status_category": "new"
+    },
+    "10035": {
+      "status_id": "10035",
+      "status_name": "Assigned for Development",
+      "status_category": "indeterminate"
+    },
+    "10036": {
+      "status_id": "10036",
+      "status_name": "In Development",
+      "status_category": "indeterminate"
+    },
+    "10037": {
+      "status_id": "10037",
+      "status_name": "To Do",
+      "status_category": "new"
+    },
+    "10038": {
+      "status_id": "10038",
+      "status_name": "IN DEVELOPMENT",
+      "status_category": "indeterminate"
+    },
+    "10039": {
+      "status_id": "10039",
+      "status_name": "DONE",
+      "status_category": "done"
+    },
+    "10040": {
+      "status_id": "10040",
+      "status_name": "READY FOR QA",
+      "status_category": "indeterminate"
+    },
+    "10041": {
+      "status_id": "10041",
+      "status_name": "BLOCKED",
+      "status_category": "indeterminate"
+    },
+    "10042": {
+      "status_id": "10042",
+      "status_name": "To Do",
+      "status_category": "new"
+    },
+    "10043": {
+      "status_id": "10043",
+      "status_name": "In Progress",
+      "status_category": "indeterminate"
+    },
+    "10044": {
+      "status_id": "10044",
+      "status_name": "Done",
+      "status_category": "done"
+    },
+    "10045": {
+      "status_id": "10045",
+      "status_name": "Blocked",
+      "status_category": "indeterminate"
+    },
+    "10046": {
+      "status_id": "10046",
+      "status_name": "QA",
+      "status_category": "indeterminate"
+    },
+    "10047": {
+      "status_id": "10047",
+      "status_name": "To Do",
+      "status_category": "new"
+    },
+    "10048": {
+      "status_id": "10048",
+      "status_name": "In Progress",
+      "status_category": "indeterminate"
+    },
+    "10049": {
+      "status_id": "10049",
+      "status_name": "Done",
+      "status_category": "done"
+    },
+    "10050": {
+      "status_id": "10050",
+      "status_name": "IN REVIEW",
+      "status_category": "indeterminate"
+    },
+    "10051": {
+      "status_id": "10051",
+      "status_name": "Blocked",
+      "status_category": "indeterminate"
+    },
+    "10052": {
+      "status_id": "10052",
+      "status_name": "To Do",
+      "status_category": "new"
+    },
+    "10053": {
+      "status_id": "10053",
+      "status_name": "IN PROGRESS",
+      "status_category": "indeterminate"
+    },
+    "10054": {
+      "status_id": "10054",
+      "status_name": "DONE",
+      "status_category": "done"
+    },
+    "10058": {
+      "status_id": "10058",
+      "status_name": "To Do",
+      "status_category": "new"
+    },
+    "10059": {
+      "status_id": "10059",
+      "status_name": "In Progress",
+      "status_category": "indeterminate"
+    },
+    "10060": {
+      "status_id": "10060",
+      "status_name": "Done",
+      "status_category": "done"
+    },
+    "10064": {
+      "status_id": "10064",
+      "status_name": "To Do",
+      "status_category": "new"
+    },
+    "10065": {
+      "status_id": "10065",
+      "status_name": "In Progress",
+      "status_category": "indeterminate"
+    },
+    "10066": {
+      "status_id": "10066",
+      "status_name": "Tested Ok",
+      "status_category": "done"
+    },
+    "10067": {
+      "status_id": "10067",
+      "status_name": "Ready for QA",
+      "status_category": "indeterminate"
+    },
+    "10071": {
+      "status_id": "10071",
+      "status_name": "To Do",
+      "status_category": "new"
+    },
+    "10072": {
+      "status_id": "10072",
+      "status_name": "In Progress",
+      "status_category": "indeterminate"
+    },
+    "10073": {
+      "status_id": "10073",
+      "status_name": "Done",
+      "status_category": "done"
+    },
+    "10074": {
+      "status_id": "10074",
+      "status_name": "To Do",
+      "status_category": "new"
+    },
+    "10075": {
+      "status_id": "10075",
+      "status_name": "In Progress",
+      "status_category": "indeterminate"
+    },
+    "10076": {
+      "status_id": "10076",
+      "status_name": "Done",
+      "status_category": "done"
+    },
+    "10077": {
+      "status_id": "10077",
+      "status_name": "To Do",
+      "status_category": "new"
+    },
+    "10078": {
+      "status_id": "10078",
+      "status_name": "In Progress",
+      "status_category": "indeterminate"
+    },
+    "10079": {
+      "status_id": "10079",
+      "status_name": "Done",
+      "status_category": "done"
+    },
+    "10080": {
+      "status_id": "10080",
+      "status_name": "To Do",
+      "status_category": "new"
+    },
+    "10081": {
+      "status_id": "10081",
+      "status_name": "In Progress",
+      "status_category": "indeterminate"
+    },
+    "10082": {
+      "status_id": "10082",
+      "status_name": "Done/ deployed on STAGING",
+      "status_category": "done"
+    },
+    "10083": {
+      "status_id": "10083",
+      "status_name": "To Do",
+      "status_category": "new"
+    },
+    "10084": {
+      "status_id": "10084",
+      "status_name": "In Progress",
+      "status_category": "indeterminate"
+    },
+    "10085": {
+      "status_id": "10085",
+      "status_name": "Done / DEPLOYED",
+      "status_category": "done"
+    },
+    "10089": {
+      "status_id": "10089",
+      "status_name": "READY FOR QA",
+      "status_category": "indeterminate"
+    },
+    "10090": {
+      "status_id": "10090",
+      "status_name": "To Do",
+      "status_category": "new"
+    },
+    "10091": {
+      "status_id": "10091",
+      "status_name": "In Progress",
+      "status_category": "indeterminate"
+    },
+    "10092": {
+      "status_id": "10092",
+      "status_name": "Done",
+      "status_category": "done"
+    },
+    "10093": {
+      "status_id": "10093",
+      "status_name": "DEPLOYED",
+      "status_category": "indeterminate"
+    },
+    "10094": {
+      "status_id": "10094",
+      "status_name": "DEPLOYED on Production",
+      "status_category": "indeterminate"
+    },
+    "10095": {
+      "status_id": "10095",
+      "status_name": "BLOCKED",
+      "status_category": "indeterminate"
+    },
+    "10096": {
+      "status_id": "10096",
+      "status_name": "READY FOR QA",
+      "status_category": "indeterminate"
+    },
+    "10097": {
+      "status_id": "10097",
+      "status_name": "BLOCKED",
+      "status_category": "indeterminate"
+    },
+    "10098": {
+      "status_id": "10098",
+      "status_name": "Ready for Review",
+      "status_category": "indeterminate"
+    },
+    "10101": {
+      "status_id": "10101",
+      "status_name": "IN REVIEW",
+      "status_category": "indeterminate"
+    },
+    "10102": {
+      "status_id": "10102",
+      "status_name": "In QA",
+      "status_category": "indeterminate"
+    },
+    "10104": {
+      "status_id": "10104",
+      "status_name": "QA",
+      "status_category": "indeterminate"
+    },
+    "10105": {
+      "status_id": "10105",
+      "status_name": "IN REVIEW",
+      "status_category": "indeterminate"
+    },
+    "10107": {
+      "status_id": "10107",
+      "status_name": "To Do",
+      "status_category": "new"
+    },
+    "10108": {
+      "status_id": "10108",
+      "status_name": "In Development",
+      "status_category": "indeterminate"
+    },
+    "10109": {
+      "status_id": "10109",
+      "status_name": "Done",
+      "status_category": "done"
+    },
+    "10111": {
+      "status_id": "10111",
+      "status_name": "Blocked",
+      "status_category": "indeterminate"
+    },
+    "10112": {
+      "status_id": "10112",
+      "status_name": "Testing",
+      "status_category": "indeterminate"
+    },
+    "10113": {
+      "status_id": "10113",
+      "status_name": "IN REVIEW",
+      "status_category": "indeterminate"
+    },
+    "10114": {
+      "status_id": "10114",
+      "status_name": "Ready for Deployment",
+      "status_category": "indeterminate"
+    },
+    "10116": {
+      "status_id": "10116",
+      "status_name": "To Do",
+      "status_category": "new"
+    },
+    "10117": {
+      "status_id": "10117",
+      "status_name": "In Progress",
+      "status_category": "indeterminate"
+    },
+    "10118": {
+      "status_id": "10118",
+      "status_name": "Done",
+      "status_category": "done"
+    },
+    "10119": {
+      "status_id": "10119",
+      "status_name": "Ready For QA",
+      "status_category": "indeterminate"
+    },
+    "10122": {
+      "status_id": "10122",
+      "status_name": "DEPLOYED",
+      "status_category": "indeterminate"
+    },
+    "10123": {
+      "status_id": "10123",
+      "status_name": "To be deployed",
+      "status_category": "indeterminate"
+    },
+    "10124": {
+      "status_id": "10124",
+      "status_name": "Post deployment passed",
+      "status_category": "indeterminate"
+    },
+    "10128": {
+      "status_id": "10128",
+      "status_name": "To Do",
+      "status_category": "new"
+    },
+    "10129": {
+      "status_id": "10129",
+      "status_name": "In Progress",
+      "status_category": "indeterminate"
+    },
+    "10130": {
+      "status_id": "10130",
+      "status_name": "Done",
+      "status_category": "done"
+    },
+    "10132": {
+      "status_id": "10132",
+      "status_name": "TESTING",
+      "status_category": "indeterminate"
+    },
+    "10133": {
+      "status_id": "10133",
+      "status_name": "BLOCKED",
+      "status_category": "indeterminate"
+    },
+    "10135": {
+      "status_id": "10135",
+      "status_name": "Blocked",
+      "status_category": "indeterminate"
+    },
+    "10136": {
+      "status_id": "10136",
+      "status_name": "To Do",
+      "status_category": "new"
+    },
+    "10137": {
+      "status_id": "10137",
+      "status_name": "In Progress",
+      "status_category": "indeterminate"
+    },
+    "10138": {
+      "status_id": "10138",
+      "status_name": "Done",
+      "status_category": "done"
+    },
+    "10140": {
+      "status_id": "10140",
+      "status_name": "QA Issues",
+      "status_category": "indeterminate"
+    },
+    "10141": {
+      "status_id": "10141",
+      "status_name": "Cancelled",
+      "status_category": "done"
+    },
+    "10142": {
+      "status_id": "10142",
+      "status_name": "On hold",
+      "status_category": "indeterminate"
+    },
+    "10145": {
+      "status_id": "10145",
+      "status_name": "Unassigned",
+      "status_category": "new"
+    },
+    "10146": {
+      "status_id": "10146",
+      "status_name": "Assigned",
+      "status_category": "indeterminate"
+    },
+    "10147": {
+      "status_id": "10147",
+      "status_name": "FIXED",
+      "status_category": "done"
+    },
+    "10148": {
+      "status_id": "10148",
+      "status_name": "Parked / Closed",
+      "status_category": "indeterminate"
+    },
+    "10149": {
+      "status_id": "10149",
+      "status_name": "NEEDS REWORK",
+      "status_category": "indeterminate"
+    },
+    "10156": {
+      "status_id": "10156",
+      "status_name": "BLOCKED",
+      "status_category": "indeterminate"
+    },
+    "10157": {
+      "status_id": "10157",
+      "status_name": "BOCKED",
+      "status_category": "indeterminate"
+    },
+    "10165": {
+      "status_id": "10165",
+      "status_name": "TESTED OKAY",
+      "status_category": "indeterminate"
+    },
+    "10167": {
+      "status_id": "10167",
+      "status_name": "To Do",
+      "status_category": "new"
+    },
+    "10168": {
+      "status_id": "10168",
+      "status_name": "In Progress",
+      "status_category": "indeterminate"
+    },
+    "10169": {
+      "status_id": "10169",
+      "status_name": "Done",
+      "status_category": "done"
+    },
+    "10170": {
+      "status_id": "10170",
+      "status_name": "BLOCKED",
+      "status_category": "indeterminate"
+    },
+    "10171": {
+      "status_id": "10171",
+      "status_name": "ON HOLD",
+      "status_category": "indeterminate"
+    },
+    "10172": {
+      "status_id": "10172",
+      "status_name": "READY FOR DEPLOYEMENT",
+      "status_category": "done"
+    },
+    "10173": {
+      "status_id": "10173",
+      "status_name": "QA TESTING",
+      "status_category": "indeterminate"
+    },
+    "10174": {
+      "status_id": "10174",
+      "status_name": "CANCELLED",
+      "status_category": "done"
+    },
+    "10175": {
+      "status_id": "10175",
+      "status_name": "Review",
+      "status_category": "indeterminate"
+    },
+    "10176": {
+      "status_id": "10176",
+      "status_name": "IN DEVELOPMENT",
+      "status_category": "indeterminate"
+    },
+    "10177": {
+      "status_id": "10177",
+      "status_name": "IN REVIEW",
+      "status_category": "indeterminate"
+    },
+    "10179": {
+      "status_id": "10179",
+      "status_name": "To Do",
+      "status_category": "new"
+    },
+    "10180": {
+      "status_id": "10180",
+      "status_name": "IN DEVELOPMENT",
+      "status_category": "indeterminate"
+    },
+    "10181": {
+      "status_id": "10181",
+      "status_name": "Done",
+      "status_category": "done"
+    },
+    "10182": {
+      "status_id": "10182",
+      "status_name": "IN REVIEW",
+      "status_category": "indeterminate"
+    },
+    "10183": {
+      "status_id": "10183",
+      "status_name": "IN QA",
+      "status_category": "indeterminate"
+    },
+    "10184": {
+      "status_id": "10184",
+      "status_name": "IN REVIEW",
+      "status_category": "indeterminate"
+    },
+    "10185": {
+      "status_id": "10185",
+      "status_name": "BLOCKED",
+      "status_category": "indeterminate"
+    },
+    "10186": {
+      "status_id": "10186",
+      "status_name": "Decommissioned",
+      "status_category": "indeterminate"
+    },
+    "10187": {
+      "status_id": "10187",
+      "status_name": "TO DO",
+      "status_category": "new"
+    },
+    "10188": {
+      "status_id": "10188",
+      "status_name": "IN DEVELOPMENT",
+      "status_category": "indeterminate"
+    },
+    "10189": {
+      "status_id": "10189",
+      "status_name": "Done",
+      "status_category": "done"
+    },
+    "10190": {
+      "status_id": "10190",
+      "status_name": "BLOCKED",
+      "status_category": "indeterminate"
+    },
+    "10191": {
+      "status_id": "10191",
+      "status_name": "IN REVIEW",
+      "status_category": "indeterminate"
+    },
+    "10192": {
+      "status_id": "10192",
+      "status_name": "IN QA",
+      "status_category": "indeterminate"
+    },
+    "10193": {
+      "status_id": "10193",
+      "status_name": "POST DEPLOYMENT TEST",
+      "status_category": "indeterminate"
+    },
+    "10194": {
+      "status_id": "10194",
+      "status_name": "DEPLOYED",
+      "status_category": "indeterminate"
+    },
+    "10195": {
+      "status_id": "10195",
+      "status_name": "DECOMMISSIONED",
+      "status_category": "indeterminate"
+    },
+    "10196": {
+      "status_id": "10196",
+      "status_name": "READY FOR QA",
+      "status_category": "indeterminate"
+    },
+    "10197": {
+      "status_id": "10197",
+      "status_name": "PASSED QA",
+      "status_category": "indeterminate"
+    },
+    "10199": {
+      "status_id": "10199",
+      "status_name": "Review",
+      "status_category": "indeterminate"
+    },
+    "10200": {
+      "status_id": "10200",
+      "status_name": "POST DEPLOYEMENT TEST",
+      "status_category": "done"
+    },
+    "10201": {
+      "status_id": "10201",
+      "status_name": "Reopened",
+      "status_category": "indeterminate"
+    },
+    "10204": {
+      "status_id": "10204",
+      "status_name": "To Do",
+      "status_category": "new"
+    },
+    "10205": {
+      "status_id": "10205",
+      "status_name": "In Development",
+      "status_category": "indeterminate"
+    },
+    "10206": {
+      "status_id": "10206",
+      "status_name": "Done",
+      "status_category": "done"
+    },
+    "10207": {
+      "status_id": "10207",
+      "status_name": "TO DO",
+      "status_category": "new"
+    },
+    "10210": {
+      "status_id": "10210",
+      "status_name": "To Do",
+      "status_category": "new"
+    },
+    "10211": {
+      "status_id": "10211",
+      "status_name": "In Progress",
+      "status_category": "indeterminate"
+    },
+    "10212": {
+      "status_id": "10212",
+      "status_name": "Done",
+      "status_category": "done"
+    },
+    "10216": {
+      "status_id": "10216",
+      "status_name": "Blocked",
+      "status_category": "indeterminate"
+    },
+    "10217": {
+      "status_id": "10217",
+      "status_name": "Ready for QA",
+      "status_category": "indeterminate"
+    },
+    "10218": {
+      "status_id": "10218",
+      "status_name": "Ready for deployment",
+      "status_category": "indeterminate"
+    },
+    "10219": {
+      "status_id": "10219",
+      "status_name": "post deployment test",
+      "status_category": "indeterminate"
+    },
+    "10224": {
+      "status_id": "10224",
+      "status_name": "Ready for QA",
+      "status_category": "indeterminate"
+    },
+    "10225": {
+      "status_id": "10225",
+      "status_name": "Ready for Deployment",
+      "status_category": "indeterminate"
+    },
+    "10226": {
+      "status_id": "10226",
+      "status_name": "Post Deployment",
+      "status_category": "indeterminate"
+    },
+    "10229": {
+      "status_id": "10229",
+      "status_name": "To Do",
+      "status_category": "new"
+    },
+    "10230": {
+      "status_id": "10230",
+      "status_name": "Done",
+      "status_category": "done"
+    },
+    "10231": {
+      "status_id": "10231",
+      "status_name": "IN PROGRESS",
+      "status_category": "indeterminate"
+    },
+    "10247": {
+      "status_id": "10247",
+      "status_name": "Released",
+      "status_category": "done"
+    },
+    "10248": {
+      "status_id": "10248",
+      "status_name": "Alignment",
+      "status_category": "indeterminate"
+    },
+    "10249": {
+      "status_id": "10249",
+      "status_name": "Parking lot",
+      "status_category": "new"
+    },
+    "10250": {
+      "status_id": "10250",
+      "status_name": "Ideation",
+      "status_category": "indeterminate"
+    },
+    "10251": {
+      "status_id": "10251",
+      "status_name": "Prototyping",
+      "status_category": "indeterminate"
+    },
+    "10252": {
+      "status_id": "10252",
+      "status_name": "Research",
+      "status_category": "indeterminate"
+    },
+    "10253": {
+      "status_id": "10253",
+      "status_name": "To Do",
+      "status_category": "new"
+    },
+    "10254": {
+      "status_id": "10254",
+      "status_name": "In Progress",
+      "status_category": "indeterminate"
+    },
+    "10255": {
+      "status_id": "10255",
+      "status_name": "Done",
+      "status_category": "done"
+    },
+    "10261": {
+      "status_id": "10261",
+      "status_name": "To Do",
+      "status_category": "new"
+    },
+    "10262": {
+      "status_id": "10262",
+      "status_name": "In Progress - Data Extraction",
+      "status_category": "indeterminate"
+    },
+    "10263": {
+      "status_id": "10263",
+      "status_name": "Done",
+      "status_category": "done"
+    },
+    "10268": {
+      "status_id": "10268",
+      "status_name": "To Do",
+      "status_category": "new"
+    },
+    "10269": {
+      "status_id": "10269",
+      "status_name": "In Progress",
+      "status_category": "indeterminate"
+    },
+    "10270": {
+      "status_id": "10270",
+      "status_name": "Done",
+      "status_category": "done"
+    },
+    "10288": {
+      "status_id": "10288",
+      "status_name": "BACKLOG",
+      "status_category": "new"
+    },
+    "10289": {
+      "status_id": "10289",
+      "status_name": "IN PROGRESS",
+      "status_category": "indeterminate"
+    },
+    "10290": {
+      "status_id": "10290",
+      "status_name": "DONE",
+      "status_category": "done"
+    },
+    "10293": {
+      "status_id": "10293",
+      "status_name": "To Do",
+      "status_category": "new"
+    },
+    "10294": {
+      "status_id": "10294",
+      "status_name": "In Progress",
+      "status_category": "indeterminate"
+    },
+    "10295": {
+      "status_id": "10295",
+      "status_name": "Done",
+      "status_category": "done"
+    },
+    "10298": {
+      "status_id": "10298",
+      "status_name": "To Do",
+      "status_category": "new"
+    },
+    "10299": {
+      "status_id": "10299",
+      "status_name": "Done",
+      "status_category": "done"
+    },
+    "10300": {
+      "status_id": "10300",
+      "status_name": "Current Sprint Backlog",
+      "status_category": "new"
+    },
+    "10301": {
+      "status_id": "10301",
+      "status_name": "In Progress",
+      "status_category": "indeterminate"
+    },
+    "10302": {
+      "status_id": "10302",
+      "status_name": "Done",
+      "status_category": "done"
+    },
+    "10308": {
+      "status_id": "10308",
+      "status_name": "To Do",
+      "status_category": "new"
+    },
+    "10309": {
+      "status_id": "10309",
+      "status_name": "Done",
+      "status_category": "done"
+    },
+    "10310": {
+      "status_id": "10310",
+      "status_name": "To Do",
+      "status_category": "new"
+    },
+    "10311": {
+      "status_id": "10311",
+      "status_name": "Research & Ideation",
+      "status_category": "indeterminate"
+    },
+    "10312": {
+      "status_id": "10312",
+      "status_name": "Design",
+      "status_category": "indeterminate"
+    },
+    "10314": {
+      "status_id": "10314",
+      "status_name": "Done",
+      "status_category": "done"
+    },
+    "10315": {
+      "status_id": "10315",
+      "status_name": "To Do",
+      "status_category": "new"
+    },
+    "10316": {
+      "status_id": "10316",
+      "status_name": "In Progress",
+      "status_category": "indeterminate"
+    },
+    "10317": {
+      "status_id": "10317",
+      "status_name": "Done",
+      "status_category": "done"
+    },
+    "10318": {
+      "status_id": "10318",
+      "status_name": "IN QA",
+      "status_category": "indeterminate"
+    },
+    "10319": {
+      "status_id": "10319",
+      "status_name": "Blocked",
+      "status_category": "indeterminate"
+    },
+    "10320": {
+      "status_id": "10320",
+      "status_name": "IN DevOP",
+      "status_category": "indeterminate"
+    },
+    "10321": {
+      "status_id": "10321",
+      "status_name": "TO DO",
+      "status_category": "new"
+    },
+    "10322": {
+      "status_id": "10322",
+      "status_name": "DESCRIPTION",
+      "status_category": "indeterminate"
+    },
+    "10323": {
+      "status_id": "10323",
+      "status_name": "Done",
+      "status_category": "done"
+    },
+    "10332": {
+      "status_id": "10332",
+      "status_name": "Applications",
+      "status_category": "new"
+    },
+    "10333": {
+      "status_id": "10333",
+      "status_name": "Screening",
+      "status_category": "indeterminate"
+    },
+    "10334": {
+      "status_id": "10334",
+      "status_name": "Interview",
+      "status_category": "indeterminate"
+    },
+    "10335": {
+      "status_id": "10335",
+      "status_name": "Tech interview",
+      "status_category": "indeterminate"
+    },
+    "10336": {
+      "status_id": "10336",
+      "status_name": "TOP intervew",
+      "status_category": "indeterminate"
+    },
+    "10337": {
+      "status_id": "10337",
+      "status_name": "Rejected",
+      "status_category": "done"
+    },
+    "10338": {
+      "status_id": "10338",
+      "status_name": "Accepted",
+      "status_category": "done"
+    },
+    "10344": {
+      "status_id": "10344",
+      "status_name": "To Do",
+      "status_category": "new"
+    },
+    "10345": {
+      "status_id": "10345",
+      "status_name": "In Progress",
+      "status_category": "indeterminate"
+    },
+    "10346": {
+      "status_id": "10346",
+      "status_name": "Done",
+      "status_category": "done"
+    },
+    "10352": {
+      "status_id": "10352",
+      "status_name": "To Do",
+      "status_category": "new"
+    },
+    "10353": {
+      "status_id": "10353",
+      "status_name": "In Progress",
+      "status_category": "indeterminate"
+    },
+    "10354": {
+      "status_id": "10354",
+      "status_name": "Done",
+      "status_category": "done"
+    },
+    "10355": {
+      "status_id": "10355",
+      "status_name": "Blocked",
+      "status_category": "indeterminate"
+    },
+    "10357": {
+      "status_id": "10357",
+      "status_name": "Epics",
+      "status_category": "indeterminate"
+    },
+    "10358": {
+      "status_id": "10358",
+      "status_name": "DECLINED",
+      "status_category": "done"
+    },
+    "10359": {
+      "status_id": "10359",
+      "status_name": "To Do",
+      "status_category": "new"
+    },
+    "10360": {
+      "status_id": "10360",
+      "status_name": "In Progress",
+      "status_category": "indeterminate"
+    },
+    "10361": {
+      "status_id": "10361",
+      "status_name": "Done",
+      "status_category": "done"
+    },
+    "10395": {
+      "status_id": "10395",
+      "status_name": "BACKLOG",
+      "status_category": "new"
+    },
+    "10396": {
+      "status_id": "10396",
+      "status_name": "In Progress",
+      "status_category": "indeterminate"
+    },
+    "10397": {
+      "status_id": "10397",
+      "status_name": "Done",
+      "status_category": "done"
+    },
+    "10398": {
+      "status_id": "10398",
+      "status_name": "DEMO",
+      "status_category": "indeterminate"
+    },
+    "10399": {
+      "status_id": "10399",
+      "status_name": "TESTING",
+      "status_category": "indeterminate"
+    },
+    "10400": {
+      "status_id": "10400",
+      "status_name": "BLOCKED",
+      "status_category": "indeterminate"
+    },
+    "10458": {
+      "status_id": "10458",
+      "status_name": "To Do",
+      "status_category": "new"
+    },
+    "10459": {
+      "status_id": "10459",
+      "status_name": "In Progress",
+      "status_category": "indeterminate"
+    },
+    "10460": {
+      "status_id": "10460",
+      "status_name": "Done",
+      "status_category": "done"
+    },
+    "10491": {
+      "status_id": "10491",
+      "status_name": "QA",
+      "status_category": "indeterminate"
+    },
+    "10524": {
+      "status_id": "10524",
+      "status_name": "READY FOR DEPLOYMENT (RFD)",
+      "status_category": "indeterminate"
+    },
+    "10557": {
+      "status_id": "10557",
+      "status_name": "To Do",
+      "status_category": "new"
+    },
+    "10558": {
+      "status_id": "10558",
+      "status_name": "In Progress",
+      "status_category": "indeterminate"
+    },
+    "10559": {
+      "status_id": "10559",
+      "status_name": "Done",
+      "status_category": "done"
+    },
+    "10560": {
+      "status_id": "10560",
+      "status_name": "Re",
+      "status_category": "indeterminate"
+    },
+    "10561": {
+      "status_id": "10561",
+      "status_name": "Design\u2013Check",
+      "status_category": "indeterminate"
+    },
+    "10562": {
+      "status_id": "10562",
+      "status_name": "Backlog",
+      "status_category": "indeterminate"
+    },
+    "10590": {
+      "status_id": "10590",
+      "status_name": "Trash",
+      "status_category": "done"
+    },
+    "10623": {
+      "status_id": "10623",
+      "status_name": "APPROVED",
+      "status_category": "done"
+    },
+    "10656": {
+      "status_id": "10656",
+      "status_name": "Cancelled",
+      "status_category": "done"
+    },
+    "10755": {
+      "status_id": "10755",
+      "status_name": "Review",
+      "status_category": "indeterminate"
+    },
+    "10788": {
+      "status_id": "10788",
+      "status_name": "Review",
+      "status_category": "indeterminate"
+    },
+    "10789": {
+      "status_id": "10789",
+      "status_name": "QA IN PROGRESS",
+      "status_category": "indeterminate"
+    },
+    "10790": {
+      "status_id": "10790",
+      "status_name": "UAT",
+      "status_category": "indeterminate"
+    },
+    "10791": {
+      "status_id": "10791",
+      "status_name": "Ready for Deployment",
+      "status_category": "indeterminate"
+    },
+    "10793": {
+      "status_id": "10793",
+      "status_name": "Post Deployment",
+      "status_category": "indeterminate"
+    },
+    "10821": {
+      "status_id": "10821",
+      "status_name": "Done",
+      "status_category": "done"
+    },
+    "10822": {
+      "status_id": "10822",
+      "status_name": "Discovery",
+      "status_category": "indeterminate"
+    },
+    "10823": {
+      "status_id": "10823",
+      "status_name": "Parking lot",
+      "status_category": "new"
+    },
+    "10824": {
+      "status_id": "10824",
+      "status_name": "Ready for delivery",
+      "status_category": "indeterminate"
+    },
+    "10825": {
+      "status_id": "10825",
+      "status_name": "Delivery",
+      "status_category": "indeterminate"
+    },
+    "10826": {
+      "status_id": "10826",
+      "status_name": "Impact",
+      "status_category": "indeterminate"
+    },
+    "10962": {
+      "status_id": "10962",
+      "status_name": "Waiting approve",
+      "status_category": "new"
+    },
+    "10963": {
+      "status_id": "10963",
+      "status_name": "Weekly agenda",
+      "status_category": "new"
+    },
+    "10996": {
+      "status_id": "10996",
+      "status_name": "Cancelled",
+      "status_category": "done"
+    },
+    "11029": {
+      "status_id": "11029",
+      "status_name": "To Do",
+      "status_category": "new"
+    },
+    "11031": {
+      "status_id": "11031",
+      "status_name": "DONE - IN PRODUCTION",
+      "status_category": "done"
+    },
+    "11033": {
+      "status_id": "11033",
+      "status_name": "In Progress",
+      "status_category": "indeterminate"
+    },
+    "11037": {
+      "status_id": "11037",
+      "status_name": "To Do",
+      "status_category": "new"
+    },
+    "11038": {
+      "status_id": "11038",
+      "status_name": "In Development",
+      "status_category": "indeterminate"
+    },
+    "11039": {
+      "status_id": "11039",
+      "status_name": "IN PRODUCTION",
+      "status_category": "done"
+    },
+    "11040": {
+      "status_id": "11040",
+      "status_name": "ANALYSIS/DISCOVERY",
+      "status_category": "indeterminate"
+    },
+    "11041": {
+      "status_id": "11041",
+      "status_name": "CODE REVIEW/PEER REVIEW",
+      "status_category": "indeterminate"
+    },
+    "11042": {
+      "status_id": "11042",
+      "status_name": "QA/UAT/TESTING",
+      "status_category": "indeterminate"
+    },
+    "11043": {
+      "status_id": "11043",
+      "status_name": "READY FOR RELEASE",
+      "status_category": "indeterminate"
+    },
+    "11044": {
+      "status_id": "11044",
+      "status_name": "STAKEHOLDER/COMPLIANCE REVIEW",
+      "status_category": "indeterminate"
+    },
+    "11045": {
+      "status_id": "11045",
+      "status_name": "To Do",
+      "status_category": "new"
+    },
+    "11046": {
+      "status_id": "11046",
+      "status_name": "IN DEVELOPMENT",
+      "status_category": "indeterminate"
+    },
+    "11047": {
+      "status_id": "11047",
+      "status_name": "Done",
+      "status_category": "done"
+    },
+    "11048": {
+      "status_id": "11048",
+      "status_name": "ANALYSIS/DISCOVERY",
+      "status_category": "indeterminate"
+    },
+    "11049": {
+      "status_id": "11049",
+      "status_name": "CODE REVIEW",
+      "status_category": "indeterminate"
+    },
+    "11050": {
+      "status_id": "11050",
+      "status_name": "STAKEHOLDER/COMPLIANCE REVIEW",
+      "status_category": "indeterminate"
+    },
+    "11051": {
+      "status_id": "11051",
+      "status_name": "READY FOR RELEASE",
+      "status_category": "indeterminate"
+    },
+    "11052": {
+      "status_id": "11052",
+      "status_name": "QA/UAT/TESTING",
+      "status_category": "indeterminate"
+    },
+    "11085": {
+      "status_id": "11085",
+      "status_name": "ANALYSIS/DISCOVERY",
+      "status_category": "indeterminate"
+    },
+    "11122": {
+      "status_id": "11122",
+      "status_name": "QA",
+      "status_category": "indeterminate"
+    },
+    "11155": {
+      "status_id": "11155",
+      "status_name": "Ready For Review",
+      "status_category": "indeterminate"
+    },
+    "11156": {
+      "status_id": "11156",
+      "status_name": "QA Test UAT",
+      "status_category": "indeterminate"
+    },
+    "11157": {
+      "status_id": "11157",
+      "status_name": "Post Deployment Test",
+      "status_category": "indeterminate"
+    },
+    "11257": {
+      "status_id": "11257",
+      "status_name": "Done",
+      "status_category": "done"
+    },
+    "11258": {
+      "status_id": "11258",
+      "status_name": "Parking lot",
+      "status_category": "new"
+    },
+    "11259": {
+      "status_id": "11259",
+      "status_name": "Ready for delivery",
+      "status_category": "indeterminate"
+    },
+    "11260": {
+      "status_id": "11260",
+      "status_name": "Discovery",
+      "status_category": "indeterminate"
+    },
+    "11261": {
+      "status_id": "11261",
+      "status_name": "Impact",
+      "status_category": "indeterminate"
+    },
+    "11262": {
+      "status_id": "11262",
+      "status_name": "Delivery",
+      "status_category": "indeterminate"
+    },
+    "11295": {
+      "status_id": "11295",
+      "status_name": "VALIDATION | DEVELOPMENT",
+      "status_category": "indeterminate"
+    },
+    "11297": {
+      "status_id": "11297",
+      "status_name": "IN DISCOVERY",
+      "status_category": "indeterminate"
+    },
+    "11298": {
+      "status_id": "11298",
+      "status_name": "IN PROGRESS",
+      "status_category": "indeterminate"
+    },
+    "11299": {
+      "status_id": "11299",
+      "status_name": "DONE",
+      "status_category": "done"
+    },
+    "11365": {
+      "status_id": "11365",
+      "status_name": "To Do",
+      "status_category": "new"
+    },
+    "11366": {
+      "status_id": "11366",
+      "status_name": "In Progress",
+      "status_category": "indeterminate"
+    },
+    "11367": {
+      "status_id": "11367",
+      "status_name": "Done",
+      "status_category": "done"
+    },
+    "11400": {
+      "status_id": "11400",
+      "status_name": "Analysis review",
+      "status_category": "indeterminate"
+    },
+    "11510": {
+      "status_id": "11510",
+      "status_name": "In progress",
+      "status_category": "indeterminate"
+    },
+    "11613": {
+      "status_id": "11613",
+      "status_name": "ON HOLD",
+      "status_category": "indeterminate"
+    },
+    "11615": {
+      "status_id": "11615",
+      "status_name": "To Do",
+      "status_category": "new"
+    },
+    "11616": {
+      "status_id": "11616",
+      "status_name": "In Progress",
+      "status_category": "indeterminate"
+    },
+    "11617": {
+      "status_id": "11617",
+      "status_name": "Done",
+      "status_category": "done"
+    },
+    "11619": {
+      "status_id": "11619",
+      "status_name": "ON HOLD",
+      "status_category": "indeterminate"
+    }
+  }
+}

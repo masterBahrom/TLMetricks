@@ -1,0 +1,22 @@
+[
+  {
+    "id": "10001",
+    "key": "TL-123",
+    "fields": {
+      "summary": "Sample completed issue",
+      "description": "Test description",
+      "created": "2025-01-01T09:00:00.000+0000",
+      "resolutiondate": "2025-01-05T17:00:00.000+0000",
+      "resolution": {"name": "Done"},
+      "status": {"id": "5", "name": "Done"},
+      "issuetype": {"id": "10007", "name": "Task"},
+      "priority": {"id": "3", "name": "Medium"},
+      "assignee": {"displayName": "Alex Engineer"},
+      "reporter": {"displayName": "Pat Product"},
+      "labels": ["backend"],
+      "components": [{"name": "API"}],
+      "customfield_10020": [{"id": 1, "name": "Sprint 1"}],
+      "customfield_10030": 5.0
+    }
+  }
+]

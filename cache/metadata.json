@@ -1,0 +1,4653 @@
+{
+  "project_key": "TL",
+  "jira_url": "https://renmoney.atlassian.net",
+  "story_points_field": {
+    "id": "customfield_10030",
+    "name": "Story Points",
+    "custom": true,
+    "field_schema": {
+      "type": "number",
+      "custom": "com.atlassian.jira.plugin.system.customfieldtypes:float",
+      "customId": 10030
+    }
+  },
+  "sprint_field": {
+    "id": "customfield_10020",
+    "name": "Sprint",
+    "custom": true,
+    "field_schema": {
+      "type": "array",
+      "items": "json",
+      "custom": "com.pyxis.greenhopper.jira:gh-sprint",
+      "customId": 10020
+    }
+  },
+  "fields": [
+    {
+      "id": "customfield_11160",
+      "name": "Data Engineering Product",
+      "custom": true,
+      "field_schema": {
+        "type": "option",
+        "custom": "com.atlassian.jira.plugin.system.customfieldtypes:select",
+        "customId": 11160
+      }
+    },
+    {
+      "id": "customfield_10072",
+      "name": "Squads",
+      "custom": true,
+      "field_schema": {
+        "type": "array",
+        "items": "option",
+        "custom": "com.atlassian.jira.plugin.system.customfieldtypes:multicheckboxes",
+        "customId": 10072
+      }
+    },
+    {
+      "id": "customfield_10073",
+      "name": "Public description",
+      "custom": true,
+      "field_schema": {
+        "type": "string",
+        "custom": "com.atlassian.jira.plugin.system.customfieldtypes:textfield",
+        "customId": 10073
+      }
+    },
+    {
+      "id": "customfield_10074",
+      "name": "Key customers",
+      "custom": true,
+      "field_schema": {
+        "type": "array",
+        "items": "option",
+        "custom": "com.atlassian.jira.plugin.system.customfieldtypes:multicheckboxes",
+        "customId": 10074
+      }
+    },
+    {
+      "id": "customfield_10075",
+      "name": "Spec ready",
+      "custom": true,
+      "field_schema": {
+        "type": "number",
+        "custom": "jira.polaris:boolean",
+        "customId": 10075
+      }
+    },
+    {
+      "id": "customfield_10076",
+      "name": "Designs ready",
+      "custom": true,
+      "field_schema": {
+        "type": "number",
+        "custom": "jira.polaris:boolean",
+        "customId": 10076
+      }
+    },
+    {
+      "id": "customfield_10077",
+      "name": "Project start",
+      "custom": true,
+      "field_schema": {
+        "type": "string",
+        "custom": "jira.polaris:interval",
+        "customId": 10077
+      }
+    },
+    {
+      "id": "statusCategory",
+      "name": "Status Category",
+      "custom": false,
+      "field_schema": {
+        "type": "statusCategory",
+        "system": "statusCategory"
+      }
+    },
+    {
+      "id": "customfield_10078",
+      "name": "Project target",
+      "custom": true,
+      "field_schema": {
+        "type": "string",
+        "custom": "jira.polaris:interval",
+        "customId": 10078
+      }
+    },
+    {
+      "id": "parent",
+      "name": "Parent",
+      "custom": false,
+      "field_schema": null
+    },
+    {
+      "id": "resolution",
+      "name": "Resolution",
+      "custom": false,
+      "field_schema": {
+        "type": "resolution",
+        "system": "resolution"
+      }
+    },
+    {
+      "id": "customfield_10079",
+      "name": "Phase",
+      "custom": true,
+      "field_schema": {
+        "type": "option",
+        "custom": "com.atlassian.jira.plugin.system.customfieldtypes:select",
+        "customId": 10079
+      }
+    },
+    {
+      "id": "customfield_10866",
+      "name": "Work item created forms",
+      "custom": true,
+      "field_schema": {
+        "type": "array",
+        "items": "Forms",
+        "custom": "com.atlassian.jira.plugins.proforma-managed-fields:proforma-forms-field-cftype",
+        "customId": 10866
+      }
+    },
+    {
+      "id": "lastViewed",
+      "name": "Last Viewed",
+      "custom": false,
+      "field_schema": {
+        "type": "datetime",
+        "system": "lastViewed"
+      }
+    },
+    {
+      "id": "customfield_10060",
+      "name": "QA ",
+      "custom": true,
+      "field_schema": {
+        "type": "array",
+        "items": "string",
+        "custom": "com.atlassian.jira.plugin.system.customfieldtypes:labels",
+        "customId": 10060
+      }
+    },
+    {
+      "id": "customfield_10061",
+      "name": "QA assigned",
+      "custom": true,
+      "field_schema": {
+        "type": "array",
+        "items": "string",
+        "custom": "com.atlassian.jira.plugin.system.customfieldtypes:labels",
+        "customId": 10061
+      }
+    },
+    {
+      "id": "customfield_10062",
+      "name": "QA ",
+      "custom": true,
+      "field_schema": {
+        "type": "array",
+        "items": "string",
+        "custom": "com.atlassian.jira.plugin.system.customfieldtypes:labels",
+        "customId": 10062
+      }
+    },
+    {
+      "id": "customfield_10063",
+      "name": "Goal",
+      "custom": true,
+      "field_schema": {
+        "type": "array",
+        "items": "option",
+        "custom": "com.atlassian.jira.plugin.system.customfieldtypes:multicheckboxes",
+        "customId": 10063
+      }
+    },
+    {
+      "id": "customfield_10064",
+      "name": "Roadmap",
+      "custom": true,
+      "field_schema": {
+        "type": "option",
+        "custom": "com.atlassian.jira.plugin.system.customfieldtypes:select",
+        "customId": 10064
+      }
+    },
+    {
+      "id": "customfield_10065",
+      "name": "Short description",
+      "custom": true,
+      "field_schema": {
+        "type": "string",
+        "custom": "com.atlassian.jira.plugin.system.customfieldtypes:textfield",
+        "customId": 10065
+      }
+    },
+    {
+      "id": "customfield_10066",
+      "name": "Product area",
+      "custom": true,
+      "field_schema": {
+        "type": "option",
+        "custom": "com.atlassian.jira.plugin.system.customfieldtypes:select",
+        "customId": 10066
+      }
+    },
+    {
+      "id": "customfield_10067",
+      "name": "Effort",
+      "custom": true,
+      "field_schema": {
+        "type": "number",
+        "custom": "jira.polaris:rating",
+        "customId": 10067
+      }
+    },
+    {
+      "id": "customfield_10189",
+      "name": "Strategic Goals",
+      "custom": true,
+      "field_schema": {
+        "type": "option",
+        "custom": "com.atlassian.jira.plugin.system.customfieldtypes:select",
+        "customId": 10189
+      }
+    },
+    {
+      "id": "customfield_10069",
+      "name": "Goal impact",
+      "custom": true,
+      "field_schema": {
+        "type": "number",
+        "custom": "jira.polaris:rating",
+        "customId": 10069
+      }
+    },
+    {
+      "id": "labels",
+      "name": "Labels",
+      "custom": false,
+      "field_schema": {
+        "type": "array",
+        "items": "string",
+        "system": "labels"
+      }
+    },
+    {
+      "id": "aggregatetimeoriginalestimate",
+      "name": "\u03a3 Original Estimate",
+      "custom": false,
+      "field_schema": {
+        "type": "number",
+        "system": "aggregatetimeoriginalestimate"
+      }
+    },
+    {
+      "id": "issuelinks",
+      "name": "Linked Issues",
+      "custom": false,
+      "field_schema": {
+        "type": "array",
+        "items": "issuelinks",
+        "system": "issuelinks"
+      }
+    },
+    {
+      "id": "assignee",
+      "name": "Assignee",
+      "custom": false,
+      "field_schema": {
+        "type": "user",
+        "system": "assignee"
+      }
+    },
+    {
+      "id": "components",
+      "name": "Components",
+      "custom": false,
+      "field_schema": {
+        "type": "array",
+        "items": "component",
+        "system": "components"
+      }
+    },
+    {
+      "id": "customfield_10050",
+      "name": "Locked forms",
+      "custom": true,
+      "field_schema": {
+        "type": "number",
+        "custom": "com.atlassian.jira.plugins.proforma-managed-fields:forms-locked-field-cftype",
+        "customId": 10050
+      }
+    },
+    {
+      "id": "customfield_10051",
+      "name": "Total forms",
+      "custom": true,
+      "field_schema": {
+        "type": "number",
+        "custom": "com.atlassian.jira.plugins.proforma-managed-fields:forms-total-field-cftype",
+        "customId": 10051
+      }
+    },
+    {
+      "id": "customfield_10053",
+      "name": "Category",
+      "custom": true,
+      "field_schema": {
+        "type": "option",
+        "custom": "com.atlassian.jira.plugin.system.customfieldtypes:jwm-category",
+        "customId": 10053
+      }
+    },
+    {
+      "id": "customfield_10054",
+      "name": "QA assigned",
+      "custom": true,
+      "field_schema": {
+        "type": "array",
+        "items": "user",
+        "custom": "com.atlassian.jira.plugin.system.customfieldtypes:people",
+        "customId": 10054,
+        "configuration": {
+          "isMulti": true
+        }
+      }
+    },
+    {
+      "id": "customfield_10055",
+      "name": "QA assigned",
+      "custom": true,
+      "field_schema": {
+        "type": "array",
+        "items": "user",
+        "custom": "com.atlassian.jira.plugin.system.customfieldtypes:people",
+        "customId": 10055,
+        "configuration": {
+          "isMulti": true
+        }
+      }
+    },
+    {
+      "id": "customfield_10056",
+      "name": "QA assigned",
+      "custom": true,
+      "field_schema": {
+        "type": "array",
+        "items": "user",
+        "custom": "com.atlassian.jira.plugin.system.customfieldtypes:people",
+        "customId": 10056,
+        "configuration": {
+          "isMulti": true
+        }
+      }
+    },
+    {
+      "id": "customfield_10057",
+      "name": "Channel",
+      "custom": true,
+      "field_schema": {
+        "type": "array",
+        "items": "string",
+        "custom": "com.atlassian.jira.plugin.system.customfieldtypes:labels",
+        "customId": 10057
+      }
+    },
+    {
+      "id": "customfield_10058",
+      "name": "Channel",
+      "custom": true,
+      "field_schema": {
+        "type": "array",
+        "items": "string",
+        "custom": "com.atlassian.jira.plugin.system.customfieldtypes:labels",
+        "customId": 10058
+      }
+    },
+    {
+      "id": "customfield_10059",
+      "name": "QA Assigned ",
+      "custom": true,
+      "field_schema": {
+        "type": "array",
+        "items": "user",
+        "custom": "com.atlassian.jira.plugin.system.customfieldtypes:people",
+        "customId": 10059,
+        "configuration": {
+          "isMulti": true
+        }
+      }
+    },
+    {
+      "id": "customfield_10049",
+      "name": "Submitted forms",
+      "custom": true,
+      "field_schema": {
+        "type": "number",
+        "custom": "com.atlassian.jira.plugins.proforma-managed-fields:forms-submitted-field-cftype",
+        "customId": 10049
+      }
+    },
+    {
+      "id": "customfield_10600",
+      "name": "Request language",
+      "custom": true,
+      "field_schema": {
+        "type": "sd-request-lang",
+        "custom": "com.atlassian.servicedesk.servicedesk-lingo-integration-plugin:sd-request-language",
+        "customId": 10600
+      }
+    },
+    {
+      "id": "customfield_10601",
+      "name": "Approver groups",
+      "custom": true,
+      "field_schema": {
+        "type": "array",
+        "items": "group",
+        "custom": "com.atlassian.jira.plugin.system.customfieldtypes:multigrouppicker",
+        "customId": 10601
+      }
+    },
+    {
+      "id": "customfield_10602",
+      "name": "Affected services",
+      "custom": true,
+      "field_schema": {
+        "type": "array",
+        "items": "service-entity-field",
+        "custom": "com.atlassian.jira.plugins.service-entity:service-entity-field-cftype",
+        "customId": 10602
+      }
+    },
+    {
+      "id": "customfield_10724",
+      "name": "Atlassian Project",
+      "custom": true,
+      "field_schema": {
+        "type": "atlas-project",
+        "custom": "com.atlassian.jira.plugin.system.customfieldtypes:atlas-project",
+        "customId": 10724
+      }
+    },
+    {
+      "id": "customfield_10603",
+      "name": "Time to resolution",
+      "custom": true,
+      "field_schema": {
+        "type": "sd-servicelevelagreement",
+        "custom": "com.atlassian.servicedesk:sd-sla-field",
+        "customId": 10603
+      }
+    },
+    {
+      "id": "customfield_10604",
+      "name": "Time to first response",
+      "custom": true,
+      "field_schema": {
+        "type": "sd-servicelevelagreement",
+        "custom": "com.atlassian.servicedesk:sd-sla-field",
+        "customId": 10604
+      }
+    },
+    {
+      "id": "customfield_10605",
+      "name": "Responders",
+      "custom": true,
+      "field_schema": {
+        "type": "array",
+        "items": "string",
+        "custom": "com.atlassian.jira.modules.servicemanagement.responders-entity:responders-entity-field-cftype",
+        "customId": 10605
+      }
+    },
+    {
+      "id": "customfield_10606",
+      "name": "Stakeholders",
+      "custom": true,
+      "field_schema": {
+        "type": "array",
+        "items": "user",
+        "custom": "com.atlassian.jira.plugin.system.customfieldtypes:multiuserpicker",
+        "customId": 10606
+      }
+    },
+    {
+      "id": "subtasks",
+      "name": "Sub-tasks",
+      "custom": false,
+      "field_schema": {
+        "type": "array",
+        "items": "issuelinks",
+        "system": "subtasks"
+      }
+    },
+    {
+      "id": "reporter",
+      "name": "Reporter",
+      "custom": false,
+      "field_schema": {
+        "type": "user",
+        "system": "reporter"
+      }
+    },
+    {
+      "id": "customfield_10044",
+      "name": "ImportId",
+      "custom": true,
+      "field_schema": {
+        "type": "number",
+        "custom": "com.atlassian.jira.plugin.system.customfieldtypes:float",
+        "customId": 10044
+      }
+    },
+    {
+      "id": "customfield_10045",
+      "name": "External issue ID",
+      "custom": true,
+      "field_schema": {
+        "type": "string",
+        "custom": "com.atlassian.jira.plugin.system.customfieldtypes:textfield",
+        "customId": 10045
+      }
+    },
+    {
+      "id": "customfield_10288",
+      "name": "Efforts, MD",
+      "custom": true,
+      "field_schema": {
+        "type": "number",
+        "custom": "com.atlassian.jira.plugin.system.customfieldtypes:float",
+        "customId": 10288
+      }
+    },
+    {
+      "id": "customfield_10048",
+      "name": "Open forms",
+      "custom": true,
+      "field_schema": {
+        "type": "number",
+        "custom": "com.atlassian.jira.plugins.proforma-managed-fields:forms-open-field-cftype",
+        "customId": 10048
+      }
+    },
+    {
+      "id": "customfield_10830",
+      "name": "Major incident",
+      "custom": true,
+      "field_schema": {
+        "type": "string",
+        "custom": "com.atlassian.jira.modules.servicemanagement.major-incident-entity:major-incident-entity-field-cftype",
+        "customId": 10830
+      }
+    },
+    {
+      "id": "customfield_10831",
+      "name": "Severity",
+      "custom": true,
+      "field_schema": {
+        "type": "option",
+        "custom": "com.atlassian.jira.plugin.system.customfieldtypes:select",
+        "customId": 10831
+      }
+    },
+    {
+      "id": "customfield_10832",
+      "name": "Pending reason",
+      "custom": true,
+      "field_schema": {
+        "type": "option",
+        "custom": "com.atlassian.jira.plugin.system.customfieldtypes:select",
+        "customId": 10832
+      }
+    },
+    {
+      "id": "customfield_10833",
+      "name": "Time to close after resolution",
+      "custom": true,
+      "field_schema": {
+        "type": "sd-servicelevelagreement",
+        "custom": "com.atlassian.servicedesk:sd-sla-field",
+        "customId": 10833
+      }
+    },
+    {
+      "id": "progress",
+      "name": "Progress",
+      "custom": false,
+      "field_schema": {
+        "type": "progress",
+        "system": "progress"
+      }
+    },
+    {
+      "id": "votes",
+      "name": "Votes",
+      "custom": false,
+      "field_schema": {
+        "type": "votes",
+        "system": "votes"
+      }
+    },
+    {
+      "id": "worklog",
+      "name": "Log Work",
+      "custom": false,
+      "field_schema": {
+        "type": "array",
+        "items": "worklog",
+        "system": "worklog"
+      }
+    },
+    {
+      "id": "issuetype",
+      "name": "Issue Type",
+      "custom": false,
+      "field_schema": {
+        "type": "issuetype",
+        "system": "issuetype"
+      }
+    },
+    {
+      "id": "customfield_10030",
+      "name": "Story Points",
+      "custom": true,
+      "field_schema": {
+        "type": "number",
+        "custom": "com.atlassian.jira.plugin.system.customfieldtypes:float",
+        "customId": 10030
+      }
+    },
+    {
+      "id": "project",
+      "name": "Project",
+      "custom": false,
+      "field_schema": {
+        "type": "project",
+        "system": "project"
+      }
+    },
+    {
+      "id": "customfield_11120",
+      "name": "Test plan",
+      "custom": true,
+      "field_schema": {
+        "type": "string",
+        "custom": "com.atlassian.jira.plugin.system.customfieldtypes:textarea",
+        "customId": 11120
+      }
+    },
+    {
+      "id": "customfield_11121",
+      "name": "Change managers",
+      "custom": true,
+      "field_schema": {
+        "type": "array",
+        "items": "user",
+        "custom": "com.atlassian.jira.plugin.system.customfieldtypes:multiuserpicker",
+        "customId": 11121
+      }
+    },
+    {
+      "id": "customfield_10033",
+      "name": "Request participants",
+      "custom": true,
+      "field_schema": {
+        "type": "array",
+        "items": "user",
+        "custom": "com.atlassian.servicedesk:sd-request-participants",
+        "customId": 10033
+      }
+    },
+    {
+      "id": "customfield_11122",
+      "name": "CAB",
+      "custom": true,
+      "field_schema": {
+        "type": "array",
+        "items": "user",
+        "custom": "com.atlassian.jira.plugin.system.customfieldtypes:multiuserpicker",
+        "customId": 11122
+      }
+    },
+    {
+      "id": "customfield_11123",
+      "name": "Investigation reason",
+      "custom": true,
+      "field_schema": {
+        "type": "option",
+        "custom": "com.atlassian.jira.plugin.system.customfieldtypes:select",
+        "customId": 11123
+      }
+    },
+    {
+      "id": "customfield_10034",
+      "name": "ImportId",
+      "custom": true,
+      "field_schema": {
+        "type": "number",
+        "custom": "com.atlassian.jira.plugin.system.customfieldtypes:float",
+        "customId": 10034
+      }
+    },
+    {
+      "id": "customfield_10156",
+      "name": "QA",
+      "custom": true,
+      "field_schema": {
+        "type": "array",
+        "items": "user",
+        "custom": "com.atlassian.jira.plugin.system.customfieldtypes:people",
+        "customId": 10156,
+        "configuration": {
+          "isMulti": true
+        }
+      }
+    },
+    {
+      "id": "customfield_10035",
+      "name": "External issue ID",
+      "custom": true,
+      "field_schema": {
+        "type": "string",
+        "custom": "com.atlassian.jira.plugin.system.customfieldtypes:textfield",
+        "customId": 10035
+      }
+    },
+    {
+      "id": "customfield_11125",
+      "name": "Workaround",
+      "custom": true,
+      "field_schema": {
+        "type": "string",
+        "custom": "com.atlassian.jira.plugin.system.customfieldtypes:textarea",
+        "customId": 11125
+      }
+    },
+    {
+      "id": "customfield_10157",
+      "name": "Subtask",
+      "custom": true,
+      "field_schema": {
+        "type": "option-with-child",
+        "custom": "com.atlassian.jira.plugin.system.customfieldtypes:cascadingselect",
+        "customId": 10157
+      }
+    },
+    {
+      "id": "customfield_11126",
+      "name": "Time to approve normal change",
+      "custom": true,
+      "field_schema": {
+        "type": "sd-servicelevelagreement",
+        "custom": "com.atlassian.servicedesk:sd-sla-field",
+        "customId": 11126
+      }
+    },
+    {
+      "id": "customfield_11116",
+      "name": "Planned start",
+      "custom": true,
+      "field_schema": {
+        "type": "datetime",
+        "custom": "com.atlassian.jira.plugin.system.customfieldtypes:datetime",
+        "customId": 11116
+      }
+    },
+    {
+      "id": "customfield_11117",
+      "name": "Planned end",
+      "custom": true,
+      "field_schema": {
+        "type": "datetime",
+        "custom": "com.atlassian.jira.plugin.system.customfieldtypes:datetime",
+        "customId": 11117
+      }
+    },
+    {
+      "id": "customfield_11118",
+      "name": "Implementation plan",
+      "custom": true,
+      "field_schema": {
+        "type": "string",
+        "custom": "com.atlassian.jira.plugin.system.customfieldtypes:textarea",
+        "customId": 11118
+      }
+    },
+    {
+      "id": "customfield_11119",
+      "name": "Backout plan",
+      "custom": true,
+      "field_schema": {
+        "type": "string",
+        "custom": "com.atlassian.jira.plugin.system.customfieldtypes:textarea",
+        "customId": 11119
+      }
+    },
+    {
+      "id": "resolutiondate",
+      "name": "Resolved",
+      "custom": false,
+      "field_schema": {
+        "type": "datetime",
+        "system": "resolutiondate"
+      }
+    },
+    {
+      "id": "customfield_10828",
+      "name": "Affected hardware",
+      "custom": true,
+      "field_schema": {
+        "type": "string",
+        "custom": "com.atlassian.jira.plugin.system.customfieldtypes:textfield",
+        "customId": 10828
+      }
+    },
+    {
+      "id": "customfield_10829",
+      "name": "Urgency",
+      "custom": true,
+      "field_schema": {
+        "type": "option",
+        "custom": "com.atlassian.jira.plugin.system.customfieldtypes:select",
+        "customId": 10829
+      }
+    },
+    {
+      "id": "watches",
+      "name": "Watchers",
+      "custom": false,
+      "field_schema": {
+        "type": "watches",
+        "system": "watches"
+      }
+    },
+    {
+      "id": "customfield_10020",
+      "name": "Sprint",
+      "custom": true,
+      "field_schema": {
+        "type": "array",
+        "items": "json",
+        "custom": "com.pyxis.greenhopper.jira:gh-sprint",
+        "customId": 10020
+      }
+    },
+    {
+      "id": "customfield_10021",
+      "name": "Flagged",
+      "custom": true,
+      "field_schema": {
+        "type": "array",
+        "items": "option",
+        "custom": "com.atlassian.jira.plugin.system.customfieldtypes:multicheckboxes",
+        "customId": 10021
+      }
+    },
+    {
+      "id": "customfield_10022",
+      "name": "Target start",
+      "custom": true,
+      "field_schema": {
+        "type": "date",
+        "custom": "com.atlassian.jpo:jpo-custom-field-baseline-start",
+        "customId": 10022
+      }
+    },
+    {
+      "id": "customfield_10023",
+      "name": "Target end",
+      "custom": true,
+      "field_schema": {
+        "type": "date",
+        "custom": "com.atlassian.jpo:jpo-custom-field-baseline-end",
+        "customId": 10023
+      }
+    },
+    {
+      "id": "customfield_10024",
+      "name": "[CHART] Date of First Response",
+      "custom": true,
+      "field_schema": {
+        "type": "datetime",
+        "custom": "com.atlassian.jira.ext.charting:firstresponsedate",
+        "customId": 10024
+      }
+    },
+    {
+      "id": "customfield_10025",
+      "name": "[CHART] Time in Status",
+      "custom": true,
+      "field_schema": {
+        "type": "any",
+        "custom": "com.atlassian.jira.ext.charting:timeinstatus",
+        "customId": 10025
+      }
+    },
+    {
+      "id": "customfield_10389",
+      "name": "Developer",
+      "custom": true,
+      "field_schema": {
+        "type": "user",
+        "custom": "com.atlassian.jira.plugin.system.customfieldtypes:userpicker",
+        "customId": 10389
+      }
+    },
+    {
+      "id": "customfield_10016",
+      "name": "Story point estimate",
+      "custom": true,
+      "field_schema": {
+        "type": "number",
+        "custom": "com.pyxis.greenhopper.jira:jsw-story-points",
+        "customId": 10016
+      }
+    },
+    {
+      "id": "customfield_10017",
+      "name": "Issue color",
+      "custom": true,
+      "field_schema": {
+        "type": "string",
+        "custom": "com.pyxis.greenhopper.jira:jsw-issue-color",
+        "customId": 10017
+      }
+    },
+    {
+      "id": "customfield_10018",
+      "name": "Parent Link",
+      "custom": true,
+      "field_schema": {
+        "type": "any",
+        "custom": "com.atlassian.jpo:jpo-custom-field-parent",
+        "customId": 10018
+      }
+    },
+    {
+      "id": "customfield_10019",
+      "name": "Rank",
+      "custom": true,
+      "field_schema": {
+        "type": "any",
+        "custom": "com.pyxis.greenhopper.jira:gh-lexo-rank",
+        "customId": 10019
+      }
+    },
+    {
+      "id": "updated",
+      "name": "Updated",
+      "custom": false,
+      "field_schema": {
+        "type": "datetime",
+        "system": "updated"
+      }
+    },
+    {
+      "id": "timeoriginalestimate",
+      "name": "Original estimate",
+      "custom": false,
+      "field_schema": {
+        "type": "number",
+        "system": "timeoriginalestimate"
+      }
+    },
+    {
+      "id": "description",
+      "name": "Description",
+      "custom": false,
+      "field_schema": {
+        "type": "string",
+        "system": "description"
+      }
+    },
+    {
+      "id": "customfield_10010",
+      "name": "Request Type",
+      "custom": true,
+      "field_schema": {
+        "type": "sd-customerrequesttype",
+        "custom": "com.atlassian.servicedesk:vp-origin",
+        "customId": 10010
+      }
+    },
+    {
+      "id": "customfield_10011",
+      "name": "Epic Name",
+      "custom": true,
+      "field_schema": {
+        "type": "string",
+        "custom": "com.pyxis.greenhopper.jira:gh-epic-label",
+        "customId": 10011
+      }
+    },
+    {
+      "id": "customfield_10012",
+      "name": "Epic Status",
+      "custom": true,
+      "field_schema": {
+        "type": "option",
+        "custom": "com.pyxis.greenhopper.jira:gh-epic-status",
+        "customId": 10012
+      }
+    },
+    {
+      "id": "customfield_10013",
+      "name": "Epic Color",
+      "custom": true,
+      "field_schema": {
+        "type": "string",
+        "custom": "com.pyxis.greenhopper.jira:gh-epic-color",
+        "customId": 10013
+      }
+    },
+    {
+      "id": "customfield_10255",
+      "name": "Deployment Date",
+      "custom": true,
+      "field_schema": {
+        "type": "date",
+        "custom": "com.atlassian.jira.plugin.system.customfieldtypes:datepicker",
+        "customId": 10255
+      }
+    },
+    {
+      "id": "customfield_10014",
+      "name": "Epic Link",
+      "custom": true,
+      "field_schema": {
+        "type": "any",
+        "custom": "com.pyxis.greenhopper.jira:gh-epic-link",
+        "customId": 10014
+      }
+    },
+    {
+      "id": "customfield_10498",
+      "name": "Development Estimate",
+      "custom": true,
+      "field_schema": {
+        "type": "number",
+        "custom": "com.atlassian.jira.plugin.system.customfieldtypes:float",
+        "customId": 10498
+      }
+    },
+    {
+      "id": "timetracking",
+      "name": "Time tracking",
+      "custom": false,
+      "field_schema": {
+        "type": "timetracking",
+        "system": "timetracking"
+      }
+    },
+    {
+      "id": "customfield_10015",
+      "name": "Start date",
+      "custom": true,
+      "field_schema": {
+        "type": "date",
+        "custom": "com.atlassian.jira.plugin.system.customfieldtypes:datepicker",
+        "customId": 10015
+      }
+    },
+    {
+      "id": "customfield_10499",
+      "name": "Test Estimate",
+      "custom": true,
+      "field_schema": {
+        "type": "number",
+        "custom": "com.atlassian.jira.plugin.system.customfieldtypes:float",
+        "customId": 10499
+      }
+    },
+    {
+      "id": "customfield_10005",
+      "name": "Change type",
+      "custom": true,
+      "field_schema": {
+        "type": "option",
+        "custom": "com.atlassian.jira.plugin.system.customfieldtypes:select",
+        "customId": 10005
+      }
+    },
+    {
+      "id": "customfield_10006",
+      "name": "Change risk",
+      "custom": true,
+      "field_schema": {
+        "type": "option",
+        "custom": "com.atlassian.jira.plugin.system.customfieldtypes:select",
+        "customId": 10006
+      }
+    },
+    {
+      "id": "customfield_10007",
+      "name": "Change reason",
+      "custom": true,
+      "field_schema": {
+        "type": "option",
+        "custom": "com.atlassian.jira.plugin.system.customfieldtypes:select",
+        "customId": 10007
+      }
+    },
+    {
+      "id": "customfield_10008",
+      "name": "Actual start",
+      "custom": true,
+      "field_schema": {
+        "type": "datetime",
+        "custom": "com.atlassian.jira.plugin.system.customfieldtypes:datetime",
+        "customId": 10008
+      }
+    },
+    {
+      "id": "customfield_10009",
+      "name": "Actual end",
+      "custom": true,
+      "field_schema": {
+        "type": "datetime",
+        "custom": "com.atlassian.jira.plugin.system.customfieldtypes:datetime",
+        "customId": 10009
+      }
+    },
+    {
+      "id": "summary",
+      "name": "Summary",
+      "custom": false,
+      "field_schema": {
+        "type": "string",
+        "system": "summary"
+      }
+    },
+    {
+      "id": "customfield_10120",
+      "name": "DS_Labels",
+      "custom": true,
+      "field_schema": {
+        "type": "array",
+        "items": "option",
+        "custom": "com.atlassian.jira.plugin.system.customfieldtypes:multicheckboxes",
+        "customId": 10120
+      }
+    },
+    {
+      "id": "customfield_10121",
+      "name": "Maximum 2 labels to choose:",
+      "custom": true,
+      "field_schema": {
+        "type": "string",
+        "custom": "com.atlassian.jira.plugin.system.customfieldtypes:textfield",
+        "customId": 10121
+      }
+    },
+    {
+      "id": "customfield_10000",
+      "name": "Development",
+      "custom": true,
+      "field_schema": {
+        "type": "any",
+        "custom": "com.atlassian.jira.plugins.jira-development-integration-plugin:devsummarycf",
+        "customId": 10000
+      }
+    },
+    {
+      "id": "customfield_10122",
+      "name": "How to choose Story point estimate: https://renmoney.atlassian.net/wiki/spaces/DE/pages/840794115/DS+Team+Jira+Fields",
+      "custom": true,
+      "field_schema": {
+        "type": "string",
+        "custom": "com.atlassian.jira.plugin.system.customfieldtypes:url",
+        "customId": 10122
+      }
+    },
+    {
+      "id": "customfield_10001",
+      "name": "Team",
+      "custom": true,
+      "field_schema": {
+        "type": "team",
+        "custom": "com.atlassian.jira.plugin.system.customfieldtypes:atlassian-team",
+        "customId": 10001,
+        "configuration": {
+          "com.atlassian.jira.plugin.system.customfieldtypes:atlassian-team": true
+        }
+      }
+    },
+    {
+      "id": "customfield_10002",
+      "name": "Organizations",
+      "custom": true,
+      "field_schema": {
+        "type": "array",
+        "items": "sd-customerorganization",
+        "custom": "com.atlassian.servicedesk:sd-customer-organizations",
+        "customId": 10002
+      }
+    },
+    {
+      "id": "customfield_10124",
+      "name": "Collaborators",
+      "custom": true,
+      "field_schema": {
+        "type": "array",
+        "items": "user",
+        "custom": "com.atlassian.jira.plugin.system.customfieldtypes:people",
+        "customId": 10124,
+        "configuration": {
+          "isMulti": true
+        }
+      }
+    },
+    {
+      "id": "customfield_10003",
+      "name": "Approvers",
+      "custom": true,
+      "field_schema": {
+        "type": "array",
+        "items": "user",
+        "custom": "com.atlassian.jira.plugin.system.customfieldtypes:multiuserpicker",
+        "customId": 10003
+      }
+    },
+    {
+      "id": "customfield_10004",
+      "name": "Impact",
+      "custom": true,
+      "field_schema": {
+        "type": "option",
+        "custom": "com.atlassian.jira.plugin.system.customfieldtypes:select",
+        "customId": 10004
+      }
+    },
+    {
+      "id": "customfield_10115",
+      "name": "Work category",
+      "custom": true,
+      "field_schema": {
+        "type": "string",
+        "custom": "com.atlassian.jira.plugins.work-category-field:work-category-field-cftype",
+        "customId": 10115
+      }
+    },
+    {
+      "id": "customfield_10116",
+      "name": "Approvals",
+      "custom": true,
+      "field_schema": {
+        "type": "sd-approvals",
+        "custom": "com.atlassian.servicedesk.approvals-plugin:sd-approvals",
+        "customId": 10116
+      }
+    },
+    {
+      "id": "customfield_10117",
+      "name": "Satisfaction",
+      "custom": true,
+      "field_schema": {
+        "type": "sd-feedback",
+        "custom": "com.atlassian.servicedesk:sd-request-feedback",
+        "customId": 10117
+      }
+    },
+    {
+      "id": "environment",
+      "name": "Environment",
+      "custom": false,
+      "field_schema": {
+        "type": "string",
+        "system": "environment"
+      }
+    },
+    {
+      "id": "customfield_10118",
+      "name": "Satisfaction date",
+      "custom": true,
+      "field_schema": {
+        "type": "datetime",
+        "custom": "com.atlassian.servicedesk:sd-request-feedback-date",
+        "customId": 10118
+      }
+    },
+    {
+      "id": "customfield_10119",
+      "name": "DS_Labels",
+      "custom": true,
+      "field_schema": {
+        "type": "option",
+        "custom": "com.atlassian.jira.plugin.system.customfieldtypes:select",
+        "customId": 10119
+      }
+    },
+    {
+      "id": "duedate",
+      "name": "Due date",
+      "custom": false,
+      "field_schema": {
+        "type": "date",
+        "system": "duedate"
+      }
+    },
+    {
+      "id": "comment",
+      "name": "Comment",
+      "custom": false,
+      "field_schema": {
+        "type": "comments-page",
+        "system": "comment"
+      }
+    },
+    {
+      "id": "statuscategorychangedate",
+      "name": "Status Category Changed",
+      "custom": false,
+      "field_schema": {
+        "type": "datetime",
+        "system": "statuscategorychangedate"
+      }
+    },
+    {
+      "id": "customfield_10230",
+      "name": "Delivery progress",
+      "custom": true,
+      "field_schema": {
+        "type": "string",
+        "custom": "jira.polaris:delivery-progress",
+        "customId": 10230
+      }
+    },
+    {
+      "id": "customfield_10231",
+      "name": "Delivery status",
+      "custom": true,
+      "field_schema": {
+        "type": "string",
+        "custom": "jira.polaris:delivery-status",
+        "customId": 10231
+      }
+    },
+    {
+      "id": "fixVersions",
+      "name": "Fix versions",
+      "custom": false,
+      "field_schema": {
+        "type": "array",
+        "items": "version",
+        "system": "fixVersions"
+      }
+    },
+    {
+      "id": "customfield_10354",
+      "name": "Focus Areas",
+      "custom": true,
+      "field_schema": {
+        "type": "array",
+        "items": "Focus Areas",
+        "custom": "com.atlassian.jira.plugin.system.customfieldtypes:focus-areas",
+        "customId": 10354
+      }
+    },
+    {
+      "id": "customfield_10112",
+      "name": "Sentiment",
+      "custom": true,
+      "field_schema": {
+        "type": "array",
+        "items": "sd-sentiment",
+        "custom": "com.atlassian.servicedesk.sentiment:sd-sentiment",
+        "customId": 10112
+      }
+    },
+    {
+      "id": "customfield_10113",
+      "name": "Goals",
+      "custom": true,
+      "field_schema": {
+        "type": "array",
+        "items": "Goals",
+        "custom": "com.atlassian.jira.plugin.system.customfieldtypes:goals",
+        "customId": 10113
+      }
+    },
+    {
+      "id": "customfield_10114",
+      "name": "Collaborator",
+      "custom": true,
+      "field_schema": {
+        "type": "array",
+        "items": "user",
+        "custom": "com.atlassian.jira.plugin.system.customfieldtypes:people",
+        "customId": 10114,
+        "configuration": {
+          "isMulti": true
+        }
+      }
+    },
+    {
+      "id": "customfield_10225",
+      "name": "Atlassian project",
+      "custom": true,
+      "field_schema": {
+        "type": "string",
+        "custom": "jira.polaris:atlassian-project",
+        "customId": 10225
+      }
+    },
+    {
+      "id": "customfield_10104",
+      "name": "Design",
+      "custom": true,
+      "field_schema": {
+        "type": "array",
+        "items": "design.field.name",
+        "custom": "com.atlassian.jira.plugins.jira-development-integration-plugin:designcf",
+        "customId": 10104
+      }
+    },
+    {
+      "id": "customfield_10226",
+      "name": "Atlassian project status",
+      "custom": true,
+      "field_schema": {
+        "type": "string",
+        "custom": "jira.polaris:atlassian-project-status",
+        "customId": 10226
+      }
+    },
+    {
+      "id": "customfield_10105",
+      "name": "Vulnerability",
+      "custom": true,
+      "field_schema": {
+        "type": "any",
+        "custom": "com.atlassian.jira.plugins.jira-development-integration-plugin:vulnerabilitycf",
+        "customId": 10105
+      }
+    },
+    {
+      "id": "customfield_10227",
+      "name": "Insights",
+      "custom": true,
+      "field_schema": {
+        "type": "number",
+        "custom": "jira.polaris:count-insights",
+        "customId": 10227
+      }
+    },
+    {
+      "id": "customfield_10106",
+      "name": "Hiring manager",
+      "custom": true,
+      "field_schema": {
+        "type": "string",
+        "custom": "com.atlassian.jira.plugin.system.customfieldtypes:textfield",
+        "customId": 10106
+      }
+    },
+    {
+      "id": "customfield_10228",
+      "name": "Comments",
+      "custom": true,
+      "field_schema": {
+        "type": "number",
+        "custom": "jira.polaris:count-issue-comments",
+        "customId": 10228
+      }
+    },
+    {
+      "id": "customfield_10107",
+      "name": "Hiring department",
+      "custom": true,
+      "field_schema": {
+        "type": "string",
+        "custom": "com.atlassian.jira.plugin.system.customfieldtypes:textfield",
+        "customId": 10107
+      }
+    },
+    {
+      "id": "customfield_10229",
+      "name": "Linked items",
+      "custom": true,
+      "field_schema": {
+        "type": "number",
+        "custom": "jira.polaris:count-linked-issues",
+        "customId": 10229
+      }
+    },
+    {
+      "id": "customfield_10900",
+      "name": "Organization",
+      "custom": true,
+      "field_schema": {
+        "type": "array",
+        "items": "sd-csm-organization",
+        "custom": "com.atlassian.servicedesk.customer-context:sd-csm-organization",
+        "customId": 10900
+      }
+    },
+    {
+      "id": "customfield_10108",
+      "name": "Job role",
+      "custom": true,
+      "field_schema": {
+        "type": "string",
+        "custom": "com.atlassian.jira.plugin.system.customfieldtypes:textfield",
+        "customId": 10108
+      }
+    },
+    {
+      "id": "customfield_10901",
+      "name": "Organization",
+      "custom": true,
+      "field_schema": {
+        "type": "array",
+        "items": "sd-csm-organization",
+        "custom": "com.atlassian.servicedesk.customer-context:sd-csm-organization",
+        "customId": 10901
+      }
+    },
+    {
+      "id": "customfield_10902",
+      "name": "Entitlement",
+      "custom": true,
+      "field_schema": {
+        "type": "array",
+        "items": "sd-csm-entitlement",
+        "custom": "com.atlassian.servicedesk.customer-context:sd-csm-entitlement",
+        "customId": 10902
+      }
+    },
+    {
+      "id": "customfield_10460",
+      "name": "Impact",
+      "custom": true,
+      "field_schema": {
+        "type": "number",
+        "custom": "jira.polaris:rating",
+        "customId": 10460
+      }
+    },
+    {
+      "id": "customfield_10461",
+      "name": "Score",
+      "custom": true,
+      "field_schema": {
+        "type": "number",
+        "custom": "jira.polaris:formula",
+        "customId": 10461
+      }
+    },
+    {
+      "id": "customfield_10462",
+      "name": "Design file",
+      "custom": true,
+      "field_schema": {
+        "type": "string",
+        "custom": "com.atlassian.jira.plugin.system.customfieldtypes:url",
+        "customId": 10462
+      }
+    },
+    {
+      "id": "priority",
+      "name": "Priority",
+      "custom": false,
+      "field_schema": {
+        "type": "priority",
+        "system": "priority"
+      }
+    },
+    {
+      "id": "customfield_10463",
+      "name": "Theme",
+      "custom": true,
+      "field_schema": {
+        "type": "array",
+        "items": "option",
+        "custom": "com.atlassian.jira.plugin.system.customfieldtypes:multicheckboxes",
+        "customId": 10463
+      }
+    },
+    {
+      "id": "customfield_10101",
+      "name": "Impact score",
+      "custom": true,
+      "field_schema": {
+        "type": "number",
+        "custom": "jira.polaris:formula",
+        "customId": 10101
+      }
+    },
+    {
+      "id": "customfield_10464",
+      "name": "Customer segments",
+      "custom": true,
+      "field_schema": {
+        "type": "array",
+        "items": "option",
+        "custom": "com.atlassian.jira.plugin.system.customfieldtypes:multicheckboxes",
+        "customId": 10464
+      }
+    },
+    {
+      "id": "customfield_10222",
+      "name": "Idea archived",
+      "custom": true,
+      "field_schema": {
+        "type": "option",
+        "custom": "com.atlassian.jira.plugin.system.customfieldtypes:select",
+        "customId": 10222
+      }
+    },
+    {
+      "id": "customfield_10223",
+      "name": "Idea archived by",
+      "custom": true,
+      "field_schema": {
+        "type": "array",
+        "items": "user",
+        "custom": "com.atlassian.jira.plugin.system.customfieldtypes:people",
+        "customId": 10223,
+        "configuration": {
+          "isMulti": true
+        }
+      }
+    },
+    {
+      "id": "customfield_10102",
+      "name": "Insights impact",
+      "custom": true,
+      "field_schema": {
+        "type": "number",
+        "custom": "jira.polaris:formula",
+        "customId": 10102
+      }
+    },
+    {
+      "id": "customfield_10465",
+      "name": "Designs ready",
+      "custom": true,
+      "field_schema": {
+        "type": "number",
+        "custom": "jira.polaris:boolean",
+        "customId": 10465
+      }
+    },
+    {
+      "id": "customfield_10224",
+      "name": "Idea archived on",
+      "custom": true,
+      "field_schema": {
+        "type": "datetime",
+        "custom": "com.atlassian.jira.plugin.system.customfieldtypes:datetime",
+        "customId": 10224
+      }
+    },
+    {
+      "id": "customfield_10103",
+      "name": "Impact vs. effort",
+      "custom": true,
+      "field_schema": {
+        "type": "number",
+        "custom": "jira.polaris:formula",
+        "customId": 10103
+      }
+    },
+    {
+      "id": "customfield_10456",
+      "name": "Idea short description",
+      "custom": true,
+      "field_schema": {
+        "type": "string",
+        "custom": "com.atlassian.jira.plugin.system.customfieldtypes:textfield",
+        "customId": 10456
+      }
+    },
+    {
+      "id": "customfield_10457",
+      "name": "Documents",
+      "custom": true,
+      "field_schema": {
+        "type": "string",
+        "custom": "com.atlassian.jira.plugin.system.customfieldtypes:url",
+        "customId": 10457
+      }
+    },
+    {
+      "id": "customfield_10458",
+      "name": "Project start",
+      "custom": true,
+      "field_schema": {
+        "type": "string",
+        "custom": "jira.polaris:interval",
+        "customId": 10458
+      }
+    },
+    {
+      "id": "customfield_10459",
+      "name": "State",
+      "custom": true,
+      "field_schema": {
+        "type": "option",
+        "custom": "com.atlassian.jira.plugin.system.customfieldtypes:select",
+        "customId": 10459
+      }
+    },
+    {
+      "id": "timeestimate",
+      "name": "Remaining Estimate",
+      "custom": false,
+      "field_schema": {
+        "type": "number",
+        "system": "timeestimate"
+      }
+    },
+    {
+      "id": "versions",
+      "name": "Affects versions",
+      "custom": false,
+      "field_schema": {
+        "type": "array",
+        "items": "version",
+        "system": "versions"
+      }
+    },
+    {
+      "id": "status",
+      "name": "Status",
+      "custom": false,
+      "field_schema": {
+        "type": "status",
+        "system": "status"
+      }
+    },
+    {
+      "id": "issuekey",
+      "name": "Key",
+      "custom": false,
+      "field_schema": null
+    },
+    {
+      "id": "customfield_10690",
+      "name": "RICE score",
+      "custom": true,
+      "field_schema": {
+        "type": "number",
+        "custom": "jira.polaris:formula",
+        "customId": 10690
+      }
+    },
+    {
+      "id": "customfield_10691",
+      "name": "Product Area",
+      "custom": true,
+      "field_schema": {
+        "type": "array",
+        "items": "option",
+        "custom": "com.atlassian.jira.plugin.system.customfieldtypes:multicheckboxes",
+        "customId": 10691
+      }
+    },
+    {
+      "id": "customfield_10453",
+      "name": "Project target",
+      "custom": true,
+      "field_schema": {
+        "type": "string",
+        "custom": "jira.polaris:interval",
+        "customId": 10453
+      }
+    },
+    {
+      "id": "customfield_10454",
+      "name": "Roadmap",
+      "custom": true,
+      "field_schema": {
+        "type": "option",
+        "custom": "com.atlassian.jira.plugin.system.customfieldtypes:select",
+        "customId": 10454
+      }
+    },
+    {
+      "id": "customfield_10455",
+      "name": "Effort",
+      "custom": true,
+      "field_schema": {
+        "type": "number",
+        "custom": "jira.polaris:rating",
+        "customId": 10455
+      }
+    },
+    {
+      "id": "customfield_10687",
+      "name": "Idea short description",
+      "custom": true,
+      "field_schema": {
+        "type": "string",
+        "custom": "com.atlassian.jira.plugin.system.customfieldtypes:textfield",
+        "customId": 10687
+      }
+    },
+    {
+      "id": "customfield_10566",
+      "name": "Acceptance Criteria",
+      "custom": true,
+      "field_schema": {
+        "type": "string",
+        "custom": "com.atlassian.jira.plugin.system.customfieldtypes:textarea",
+        "customId": 10566
+      }
+    },
+    {
+      "id": "customfield_10688",
+      "name": "Confidence",
+      "custom": true,
+      "field_schema": {
+        "type": "number",
+        "custom": "jira.polaris:slider",
+        "customId": 10688
+      }
+    },
+    {
+      "id": "customfield_10567",
+      "name": "Acceptance Criteria",
+      "custom": true,
+      "field_schema": {
+        "type": "string",
+        "custom": "com.atlassian.jira.plugin.system.customfieldtypes:textarea",
+        "customId": 10567
+      }
+    },
+    {
+      "id": "customfield_10689",
+      "name": "Documents",
+      "custom": true,
+      "field_schema": {
+        "type": "string",
+        "custom": "com.atlassian.jira.plugin.system.customfieldtypes:url",
+        "customId": 10689
+      }
+    },
+    {
+      "id": "aggregatetimeestimate",
+      "name": "\u03a3 Remaining Estimate",
+      "custom": false,
+      "field_schema": {
+        "type": "number",
+        "system": "aggregatetimeestimate"
+      }
+    },
+    {
+      "id": "creator",
+      "name": "Creator",
+      "custom": false,
+      "field_schema": {
+        "type": "user",
+        "system": "creator"
+      }
+    },
+    {
+      "id": "customfield_10680",
+      "name": "Spec ready",
+      "custom": true,
+      "field_schema": {
+        "type": "number",
+        "custom": "jira.polaris:boolean",
+        "customId": 10680
+      }
+    },
+    {
+      "id": "customfield_10681",
+      "name": "Designs ready",
+      "custom": true,
+      "field_schema": {
+        "type": "number",
+        "custom": "jira.polaris:boolean",
+        "customId": 10681
+      }
+    },
+    {
+      "id": "aggregateprogress",
+      "name": "\u03a3 Progress",
+      "custom": false,
+      "field_schema": {
+        "type": "progress",
+        "system": "aggregateprogress"
+      }
+    },
+    {
+      "id": "customfield_10682",
+      "name": "Project start",
+      "custom": true,
+      "field_schema": {
+        "type": "string",
+        "custom": "jira.polaris:interval",
+        "customId": 10682
+      }
+    },
+    {
+      "id": "customfield_10683",
+      "name": "Project target",
+      "custom": true,
+      "field_schema": {
+        "type": "string",
+        "custom": "jira.polaris:interval",
+        "customId": 10683
+      }
+    },
+    {
+      "id": "customfield_10684",
+      "name": "Category",
+      "custom": true,
+      "field_schema": {
+        "type": "option",
+        "custom": "com.atlassian.jira.plugin.system.customfieldtypes:select",
+        "customId": 10684
+      }
+    },
+    {
+      "id": "customfield_10321",
+      "name": "Groomed",
+      "custom": true,
+      "field_schema": {
+        "type": "array",
+        "items": "option",
+        "custom": "com.atlassian.jira.plugin.system.customfieldtypes:multicheckboxes",
+        "customId": 10321
+      }
+    },
+    {
+      "id": "customfield_10685",
+      "name": "Value",
+      "custom": true,
+      "field_schema": {
+        "type": "number",
+        "custom": "jira.polaris:rating",
+        "customId": 10685
+      }
+    },
+    {
+      "id": "customfield_10686",
+      "name": "Effort",
+      "custom": true,
+      "field_schema": {
+        "type": "number",
+        "custom": "jira.polaris:rating",
+        "customId": 10686
+      }
+    },
+    {
+      "id": "customfield_10565",
+      "name": "Acceptance Criteria",
+      "custom": true,
+      "field_schema": {
+        "type": "string",
+        "custom": "com.atlassian.jira.plugin.system.customfieldtypes:textarea",
+        "customId": 10565
+      }
+    },
+    {
+      "id": "customfield_10676",
+      "name": "Theme",
+      "custom": true,
+      "field_schema": {
+        "type": "array",
+        "items": "option",
+        "custom": "com.atlassian.jira.plugin.system.customfieldtypes:multicheckboxes",
+        "customId": 10676
+      }
+    },
+    {
+      "id": "customfield_10677",
+      "name": "Roadmap",
+      "custom": true,
+      "field_schema": {
+        "type": "option",
+        "custom": "com.atlassian.jira.plugin.system.customfieldtypes:select",
+        "customId": 10677
+      }
+    },
+    {
+      "id": "customfield_10678",
+      "name": "Reach",
+      "custom": true,
+      "field_schema": {
+        "type": "number",
+        "custom": "jira.polaris:rating",
+        "customId": 10678
+      }
+    },
+    {
+      "id": "customfield_10679",
+      "name": "Customer segments",
+      "custom": true,
+      "field_schema": {
+        "type": "array",
+        "items": "option",
+        "custom": "com.atlassian.jira.plugin.system.customfieldtypes:multicheckboxes",
+        "customId": 10679
+      }
+    },
+    {
+      "id": "customfield_11081",
+      "name": "Source",
+      "custom": true,
+      "field_schema": {
+        "type": "option",
+        "custom": "com.atlassian.jira.plugin.system.customfieldtypes:select",
+        "customId": 11081
+      }
+    },
+    {
+      "id": "customfield_11082",
+      "name": "Product categorization",
+      "custom": true,
+      "field_schema": {
+        "type": "option-with-child",
+        "custom": "com.atlassian.jira.plugin.system.customfieldtypes:cascadingselect",
+        "customId": 11082
+      }
+    },
+    {
+      "id": "customfield_11083",
+      "name": "Operational categorization",
+      "custom": true,
+      "field_schema": {
+        "type": "option-with-child",
+        "custom": "com.atlassian.jira.plugin.system.customfieldtypes:cascadingselect",
+        "customId": 11083
+      }
+    },
+    {
+      "id": "timespent",
+      "name": "Time Spent",
+      "custom": false,
+      "field_schema": {
+        "type": "number",
+        "system": "timespent"
+      }
+    },
+    {
+      "id": "aggregatetimespent",
+      "name": "\u03a3 Time Spent",
+      "custom": false,
+      "field_schema": {
+        "type": "number",
+        "system": "aggregatetimespent"
+      }
+    },
+    {
+      "id": "customfield_10675",
+      "name": "Impact",
+      "custom": true,
+      "field_schema": {
+        "type": "number",
+        "custom": "jira.polaris:rating",
+        "customId": 10675
+      }
+    },
+    {
+      "id": "workratio",
+      "name": "Work Ratio",
+      "custom": false,
+      "field_schema": {
+        "type": "number",
+        "system": "workratio"
+      }
+    },
+    {
+      "id": "issuerestriction",
+      "name": "Restrict to",
+      "custom": false,
+      "field_schema": {
+        "type": "issuerestriction",
+        "system": "issuerestriction"
+      }
+    },
+    {
+      "id": "thumbnail",
+      "name": "Images",
+      "custom": false,
+      "field_schema": null
+    },
+    {
+      "id": "created",
+      "name": "Created",
+      "custom": false,
+      "field_schema": {
+        "type": "datetime",
+        "system": "created"
+      }
+    },
+    {
+      "id": "customfield_10420",
+      "name": "Tester",
+      "custom": true,
+      "field_schema": {
+        "type": "user",
+        "custom": "com.atlassian.jira.plugin.system.customfieldtypes:userpicker",
+        "customId": 10420
+      }
+    },
+    {
+      "id": "customfield_10899",
+      "name": "Entitlement",
+      "custom": true,
+      "field_schema": {
+        "type": "array",
+        "items": "sd-csm-entitlement",
+        "custom": "com.atlassian.servicedesk.customer-context:sd-csm-entitlement",
+        "customId": 10899
+      }
+    },
+    {
+      "id": "customfield_10090",
+      "name": "Project overview status",
+      "custom": true,
+      "field_schema": {
+        "type": "string",
+        "custom": "read-only-string-issue-field",
+        "customId": 10090
+      }
+    },
+    {
+      "id": "customfield_10093",
+      "name": "Naira Impact",
+      "custom": true,
+      "field_schema": {
+        "type": "number",
+        "custom": "com.atlassian.jira.plugin.system.customfieldtypes:float",
+        "customId": 10093
+      }
+    },
+    {
+      "id": "customfield_10095",
+      "name": "Urgency",
+      "custom": true,
+      "field_schema": {
+        "type": "array",
+        "items": "option",
+        "custom": "com.atlassian.jira.plugin.system.customfieldtypes:multicheckboxes",
+        "customId": 10095
+      }
+    },
+    {
+      "id": "customfield_10532",
+      "name": "Start Date",
+      "custom": true,
+      "field_schema": {
+        "type": "date",
+        "custom": "com.atlassian.jira.plugin.system.customfieldtypes:datepicker",
+        "customId": 10532
+      }
+    },
+    {
+      "id": "security",
+      "name": "Security Level",
+      "custom": false,
+      "field_schema": {
+        "type": "securitylevel",
+        "system": "security"
+      }
+    },
+    {
+      "id": "attachment",
+      "name": "Attachment",
+      "custom": false,
+      "field_schema": {
+        "type": "array",
+        "items": "attachment",
+        "system": "attachment"
+      }
+    },
+    {
+      "id": "customfield_10080",
+      "name": "Type",
+      "custom": true,
+      "field_schema": {
+        "type": "option",
+        "custom": "com.atlassian.jira.plugin.system.customfieldtypes:select",
+        "customId": 10080
+      }
+    },
+    {
+      "id": "customfield_10081",
+      "name": "Train The Trainer",
+      "custom": true,
+      "field_schema": {
+        "type": "number",
+        "custom": "jira.polaris:boolean",
+        "customId": 10081
+      }
+    },
+    {
+      "id": "customfield_10082",
+      "name": "FAQs Ready",
+      "custom": true,
+      "field_schema": {
+        "type": "number",
+        "custom": "jira.polaris:boolean",
+        "customId": 10082
+      }
+    },
+    {
+      "id": "customfield_10083",
+      "name": "Reporting Ready",
+      "custom": true,
+      "field_schema": {
+        "type": "number",
+        "custom": "jira.polaris:boolean",
+        "customId": 10083
+      }
+    },
+    {
+      "id": "customfield_10084",
+      "name": "Marketing creatives",
+      "custom": true,
+      "field_schema": {
+        "type": "number",
+        "custom": "jira.polaris:boolean",
+        "customId": 10084
+      }
+    },
+    {
+      "id": "customfield_10085",
+      "name": "Reach",
+      "custom": true,
+      "field_schema": {
+        "type": "number",
+        "custom": "com.atlassian.jira.plugin.system.customfieldtypes:float",
+        "customId": 10085
+      }
+    },
+    {
+      "id": "customfield_10086",
+      "name": "Sign-off",
+      "custom": true,
+      "field_schema": {
+        "type": "number",
+        "custom": "jira.polaris:boolean",
+        "customId": 10086
+      }
+    },
+    {
+      "id": "customfield_10087",
+      "name": "Initiatives",
+      "custom": true,
+      "field_schema": {
+        "type": "array",
+        "items": "option",
+        "custom": "com.atlassian.jira.plugin.system.customfieldtypes:multicheckboxes",
+        "customId": 10087
+      }
+    },
+    {
+      "id": "customfield_10088",
+      "name": "Business Owner",
+      "custom": true,
+      "field_schema": {
+        "type": "string",
+        "custom": "com.atlassian.jira.plugin.system.customfieldtypes:textfield",
+        "customId": 10088
+      }
+    },
+    {
+      "id": "customfield_10089",
+      "name": "Project overview key",
+      "custom": true,
+      "field_schema": {
+        "type": "string",
+        "custom": "read-only-string-issue-field",
+        "customId": 10089
+      }
+    },
+    {
+      "id": "customfield_10757",
+      "name": "Size",
+      "custom": true,
+      "field_schema": {
+        "type": "option-with-child",
+        "custom": "com.atlassian.jira.plugin.system.customfieldtypes:cascadingselect",
+        "customId": 10757
+      }
+    }
+  ],
+  "statuses": [
+    {
+      "id": "10348",
+      "name": "READY TO TEST",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10285",
+      "name": "Blocked",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10284",
+      "name": "Ready for UAT",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10281",
+      "name": "PDT",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10280",
+      "name": "Deployments",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10279",
+      "name": "In Sprint",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10278",
+      "name": "IN PROGRESS - EXTERNAL QA",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10277",
+      "name": "IN PROGRESS - INFO. GATHERING",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10276",
+      "name": "IN PROGRESS - INTERNAL QA",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10275",
+      "name": "IN PROGRESS - BUILD PHASE",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10341",
+      "name": "Awaits homework",
+      "category_key": "new",
+      "category_name": "To Do"
+    },
+    {
+      "id": "10342",
+      "name": "Approved & Ready for QA",
+      "category_key": "new",
+      "category_name": "To Do"
+    },
+    {
+      "id": "10343",
+      "name": "Shipped off for development",
+      "category_key": "done",
+      "category_name": "Done"
+    },
+    {
+      "id": "10347",
+      "name": "CODE REVIEW",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10236",
+      "name": "Automating",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10349",
+      "name": "TESTING",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10260",
+      "name": "Sign Off",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10259",
+      "name": "Abandoned",
+      "category_key": "done",
+      "category_name": "Done"
+    },
+    {
+      "id": "10258",
+      "name": "RFD",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10257",
+      "name": "Blocked",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10256",
+      "name": "Validation",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10350",
+      "name": "READY TO UAT",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10351",
+      "name": "BLOCKED",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10246",
+      "name": "Ready for UAT",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10245",
+      "name": "Ready for review",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10241",
+      "name": "Bocked",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10240",
+      "name": "HOT-FIX-BUGS",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10239",
+      "name": "Ready for deployment",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10238",
+      "name": "Failed Post Deployment",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10237",
+      "name": "FAILED POST DEPLOYMENTS",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10306",
+      "name": "Next Sprint Items",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10305",
+      "name": "Blocker",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10304",
+      "name": "Backlog",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10303",
+      "name": "Under-review",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10307",
+      "name": "ON HOLD",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10324",
+      "name": "APPROVAL",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10325",
+      "name": "APPROVAL NOTIF",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10326",
+      "name": "ENGINEERING",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10327",
+      "name": "DEVELOPMENT",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10297",
+      "name": "ON HOLD",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10328",
+      "name": "STAGE TEST",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10329",
+      "name": "PROD DEPLOY",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10330",
+      "name": "PROD NOTIF",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10292",
+      "name": "REVIEW",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10291",
+      "name": "Ready for Review",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10331",
+      "name": "PROD TEST",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10339",
+      "name": "Offer",
+      "category_key": "new",
+      "category_name": "To Do"
+    },
+    {
+      "id": "10340",
+      "name": "Homework",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "3",
+      "name": "In Progress",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "400",
+      "name": "Building",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10003",
+      "name": "To Do",
+      "category_key": "new",
+      "category_name": "To Do"
+    },
+    {
+      "id": "10004",
+      "name": "In Review",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10005",
+      "name": "Done",
+      "category_key": "done",
+      "category_name": "Done"
+    },
+    {
+      "id": "10006",
+      "name": "To Do",
+      "category_key": "new",
+      "category_name": "To Do"
+    },
+    {
+      "id": "10007",
+      "name": "In Progress",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10008",
+      "name": "Done",
+      "category_key": "done",
+      "category_name": "Done"
+    },
+    {
+      "id": "10009",
+      "name": "To Do",
+      "category_key": "new",
+      "category_name": "To Do"
+    },
+    {
+      "id": "10010",
+      "name": "BLOCKED",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10011",
+      "name": "Done",
+      "category_key": "done",
+      "category_name": "Done"
+    },
+    {
+      "id": "10012",
+      "name": "IN QA",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10013",
+      "name": "To Do",
+      "category_key": "new",
+      "category_name": "To Do"
+    },
+    {
+      "id": "10014",
+      "name": "In Progress",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10015",
+      "name": "Done",
+      "category_key": "done",
+      "category_name": "Done"
+    },
+    {
+      "id": "10016",
+      "name": "IN REVIEW",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10021",
+      "name": "Backlog",
+      "category_key": "new",
+      "category_name": "To Do"
+    },
+    {
+      "id": "10022",
+      "name": "Selected for Development",
+      "category_key": "new",
+      "category_name": "To Do"
+    },
+    {
+      "id": "10026",
+      "name": "Parking Lot",
+      "category_key": "new",
+      "category_name": "To Do"
+    },
+    {
+      "id": "10027",
+      "name": "Assigned to Developer",
+      "category_key": "new",
+      "category_name": "To Do"
+    },
+    {
+      "id": "10028",
+      "name": "Ready for QA",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10029",
+      "name": "Tested OK",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10030",
+      "name": "To be Deployed",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10031",
+      "name": "Deployed",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10032",
+      "name": "Post Deployment Passed",
+      "category_key": "done",
+      "category_name": "Done"
+    },
+    {
+      "id": "10033",
+      "name": "Decommissioned",
+      "category_key": "done",
+      "category_name": "Done"
+    },
+    {
+      "id": "10034",
+      "name": "Packing Lot",
+      "category_key": "new",
+      "category_name": "To Do"
+    },
+    {
+      "id": "10035",
+      "name": "Assigned for Development",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10036",
+      "name": "In Development",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10037",
+      "name": "To Do",
+      "category_key": "new",
+      "category_name": "To Do"
+    },
+    {
+      "id": "10038",
+      "name": "IN DEVELOPMENT",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10039",
+      "name": "DONE",
+      "category_key": "done",
+      "category_name": "Done"
+    },
+    {
+      "id": "10040",
+      "name": "READY FOR QA",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10041",
+      "name": "BLOCKED",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10042",
+      "name": "To Do",
+      "category_key": "new",
+      "category_name": "To Do"
+    },
+    {
+      "id": "10043",
+      "name": "In Progress",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10044",
+      "name": "Done",
+      "category_key": "done",
+      "category_name": "Done"
+    },
+    {
+      "id": "10045",
+      "name": "Blocked",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10046",
+      "name": "QA",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10047",
+      "name": "To Do",
+      "category_key": "new",
+      "category_name": "To Do"
+    },
+    {
+      "id": "10048",
+      "name": "In Progress",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10049",
+      "name": "Done",
+      "category_key": "done",
+      "category_name": "Done"
+    },
+    {
+      "id": "10050",
+      "name": "IN REVIEW",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10051",
+      "name": "Blocked",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10052",
+      "name": "To Do",
+      "category_key": "new",
+      "category_name": "To Do"
+    },
+    {
+      "id": "10053",
+      "name": "IN PROGRESS",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10054",
+      "name": "DONE",
+      "category_key": "done",
+      "category_name": "Done"
+    },
+    {
+      "id": "10058",
+      "name": "To Do",
+      "category_key": "new",
+      "category_name": "To Do"
+    },
+    {
+      "id": "10059",
+      "name": "In Progress",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10060",
+      "name": "Done",
+      "category_key": "done",
+      "category_name": "Done"
+    },
+    {
+      "id": "10064",
+      "name": "To Do",
+      "category_key": "new",
+      "category_name": "To Do"
+    },
+    {
+      "id": "10065",
+      "name": "In Progress",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10066",
+      "name": "Tested Ok",
+      "category_key": "done",
+      "category_name": "Done"
+    },
+    {
+      "id": "10067",
+      "name": "Ready for QA",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10071",
+      "name": "To Do",
+      "category_key": "new",
+      "category_name": "To Do"
+    },
+    {
+      "id": "10072",
+      "name": "In Progress",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10073",
+      "name": "Done",
+      "category_key": "done",
+      "category_name": "Done"
+    },
+    {
+      "id": "10074",
+      "name": "To Do",
+      "category_key": "new",
+      "category_name": "To Do"
+    },
+    {
+      "id": "10075",
+      "name": "In Progress",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10076",
+      "name": "Done",
+      "category_key": "done",
+      "category_name": "Done"
+    },
+    {
+      "id": "10077",
+      "name": "To Do",
+      "category_key": "new",
+      "category_name": "To Do"
+    },
+    {
+      "id": "10078",
+      "name": "In Progress",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10079",
+      "name": "Done",
+      "category_key": "done",
+      "category_name": "Done"
+    },
+    {
+      "id": "10080",
+      "name": "To Do",
+      "category_key": "new",
+      "category_name": "To Do"
+    },
+    {
+      "id": "10081",
+      "name": "In Progress",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10082",
+      "name": "Done/ deployed on STAGING",
+      "category_key": "done",
+      "category_name": "Done"
+    },
+    {
+      "id": "10083",
+      "name": "To Do",
+      "category_key": "new",
+      "category_name": "To Do"
+    },
+    {
+      "id": "10084",
+      "name": "In Progress",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10085",
+      "name": "Done / DEPLOYED",
+      "category_key": "done",
+      "category_name": "Done"
+    },
+    {
+      "id": "10089",
+      "name": "READY FOR QA",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10090",
+      "name": "To Do",
+      "category_key": "new",
+      "category_name": "To Do"
+    },
+    {
+      "id": "10091",
+      "name": "In Progress",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10092",
+      "name": "Done",
+      "category_key": "done",
+      "category_name": "Done"
+    },
+    {
+      "id": "10093",
+      "name": "DEPLOYED",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10094",
+      "name": "DEPLOYED on Production",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10095",
+      "name": "BLOCKED",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10096",
+      "name": "READY FOR QA",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10097",
+      "name": "BLOCKED",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10098",
+      "name": "Ready for Review",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10101",
+      "name": "IN REVIEW",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10102",
+      "name": "In QA",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10104",
+      "name": "QA",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10105",
+      "name": "IN REVIEW",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10107",
+      "name": "To Do",
+      "category_key": "new",
+      "category_name": "To Do"
+    },
+    {
+      "id": "10108",
+      "name": "In Development",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10109",
+      "name": "Done",
+      "category_key": "done",
+      "category_name": "Done"
+    },
+    {
+      "id": "10111",
+      "name": "Blocked",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10112",
+      "name": "Testing",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10113",
+      "name": "IN REVIEW",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10114",
+      "name": "Ready for Deployment",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10116",
+      "name": "To Do",
+      "category_key": "new",
+      "category_name": "To Do"
+    },
+    {
+      "id": "10117",
+      "name": "In Progress",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10118",
+      "name": "Done",
+      "category_key": "done",
+      "category_name": "Done"
+    },
+    {
+      "id": "10119",
+      "name": "Ready For QA",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10122",
+      "name": "DEPLOYED",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10123",
+      "name": "To be deployed",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10124",
+      "name": "Post deployment passed",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10128",
+      "name": "To Do",
+      "category_key": "new",
+      "category_name": "To Do"
+    },
+    {
+      "id": "10129",
+      "name": "In Progress",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10130",
+      "name": "Done",
+      "category_key": "done",
+      "category_name": "Done"
+    },
+    {
+      "id": "10132",
+      "name": "TESTING",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10133",
+      "name": "BLOCKED",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10135",
+      "name": "Blocked",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10136",
+      "name": "To Do",
+      "category_key": "new",
+      "category_name": "To Do"
+    },
+    {
+      "id": "10137",
+      "name": "In Progress",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10138",
+      "name": "Done",
+      "category_key": "done",
+      "category_name": "Done"
+    },
+    {
+      "id": "10140",
+      "name": "QA Issues",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10141",
+      "name": "Cancelled",
+      "category_key": "done",
+      "category_name": "Done"
+    },
+    {
+      "id": "10142",
+      "name": "On hold",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10145",
+      "name": "Unassigned",
+      "category_key": "new",
+      "category_name": "To Do"
+    },
+    {
+      "id": "10146",
+      "name": "Assigned",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10147",
+      "name": "FIXED",
+      "category_key": "done",
+      "category_name": "Done"
+    },
+    {
+      "id": "10148",
+      "name": "Parked / Closed",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10149",
+      "name": "NEEDS REWORK",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10156",
+      "name": "BLOCKED",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10157",
+      "name": "BOCKED",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10165",
+      "name": "TESTED OKAY",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10167",
+      "name": "To Do",
+      "category_key": "new",
+      "category_name": "To Do"
+    },
+    {
+      "id": "10168",
+      "name": "In Progress",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10169",
+      "name": "Done",
+      "category_key": "done",
+      "category_name": "Done"
+    },
+    {
+      "id": "10170",
+      "name": "BLOCKED",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10171",
+      "name": "ON HOLD",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10172",
+      "name": "READY FOR DEPLOYEMENT",
+      "category_key": "done",
+      "category_name": "Done"
+    },
+    {
+      "id": "10173",
+      "name": "QA TESTING",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10174",
+      "name": "CANCELLED",
+      "category_key": "done",
+      "category_name": "Done"
+    },
+    {
+      "id": "10175",
+      "name": "Review",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10176",
+      "name": "IN DEVELOPMENT",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10177",
+      "name": "IN REVIEW",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10179",
+      "name": "To Do",
+      "category_key": "new",
+      "category_name": "To Do"
+    },
+    {
+      "id": "10180",
+      "name": "IN DEVELOPMENT",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10181",
+      "name": "Done",
+      "category_key": "done",
+      "category_name": "Done"
+    },
+    {
+      "id": "10182",
+      "name": "IN REVIEW",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10183",
+      "name": "IN QA",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10184",
+      "name": "IN REVIEW",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10185",
+      "name": "BLOCKED",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10186",
+      "name": "Decommissioned",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10187",
+      "name": "TO DO",
+      "category_key": "new",
+      "category_name": "To Do"
+    },
+    {
+      "id": "10188",
+      "name": "IN DEVELOPMENT",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10189",
+      "name": "Done",
+      "category_key": "done",
+      "category_name": "Done"
+    },
+    {
+      "id": "10190",
+      "name": "BLOCKED",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10191",
+      "name": "IN REVIEW",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10192",
+      "name": "IN QA",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10193",
+      "name": "POST DEPLOYMENT TEST",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10194",
+      "name": "DEPLOYED",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10195",
+      "name": "DECOMMISSIONED",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10196",
+      "name": "READY FOR QA",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10197",
+      "name": "PASSED QA",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10199",
+      "name": "Review",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10200",
+      "name": "POST DEPLOYEMENT TEST",
+      "category_key": "done",
+      "category_name": "Done"
+    },
+    {
+      "id": "10201",
+      "name": "Reopened",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10204",
+      "name": "To Do",
+      "category_key": "new",
+      "category_name": "To Do"
+    },
+    {
+      "id": "10205",
+      "name": "In Development",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10206",
+      "name": "Done",
+      "category_key": "done",
+      "category_name": "Done"
+    },
+    {
+      "id": "10207",
+      "name": "TO DO",
+      "category_key": "new",
+      "category_name": "To Do"
+    },
+    {
+      "id": "10210",
+      "name": "To Do",
+      "category_key": "new",
+      "category_name": "To Do"
+    },
+    {
+      "id": "10211",
+      "name": "In Progress",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10212",
+      "name": "Done",
+      "category_key": "done",
+      "category_name": "Done"
+    },
+    {
+      "id": "10216",
+      "name": "Blocked",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10217",
+      "name": "Ready for QA",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10218",
+      "name": "Ready for deployment",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10219",
+      "name": "post deployment test",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10224",
+      "name": "Ready for QA",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10225",
+      "name": "Ready for Deployment",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10226",
+      "name": "Post Deployment",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10229",
+      "name": "To Do",
+      "category_key": "new",
+      "category_name": "To Do"
+    },
+    {
+      "id": "10230",
+      "name": "Done",
+      "category_key": "done",
+      "category_name": "Done"
+    },
+    {
+      "id": "10231",
+      "name": "IN PROGRESS",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10247",
+      "name": "Released",
+      "category_key": "done",
+      "category_name": "Done"
+    },
+    {
+      "id": "10248",
+      "name": "Alignment",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10249",
+      "name": "Parking lot",
+      "category_key": "new",
+      "category_name": "To Do"
+    },
+    {
+      "id": "10250",
+      "name": "Ideation",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10251",
+      "name": "Prototyping",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10252",
+      "name": "Research",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10253",
+      "name": "To Do",
+      "category_key": "new",
+      "category_name": "To Do"
+    },
+    {
+      "id": "10254",
+      "name": "In Progress",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10255",
+      "name": "Done",
+      "category_key": "done",
+      "category_name": "Done"
+    },
+    {
+      "id": "10261",
+      "name": "To Do",
+      "category_key": "new",
+      "category_name": "To Do"
+    },
+    {
+      "id": "10262",
+      "name": "In Progress - Data Extraction",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10263",
+      "name": "Done",
+      "category_key": "done",
+      "category_name": "Done"
+    },
+    {
+      "id": "10268",
+      "name": "To Do",
+      "category_key": "new",
+      "category_name": "To Do"
+    },
+    {
+      "id": "10269",
+      "name": "In Progress",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10270",
+      "name": "Done",
+      "category_key": "done",
+      "category_name": "Done"
+    },
+    {
+      "id": "10288",
+      "name": "BACKLOG",
+      "category_key": "new",
+      "category_name": "To Do"
+    },
+    {
+      "id": "10289",
+      "name": "IN PROGRESS",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10290",
+      "name": "DONE",
+      "category_key": "done",
+      "category_name": "Done"
+    },
+    {
+      "id": "10293",
+      "name": "To Do",
+      "category_key": "new",
+      "category_name": "To Do"
+    },
+    {
+      "id": "10294",
+      "name": "In Progress",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10295",
+      "name": "Done",
+      "category_key": "done",
+      "category_name": "Done"
+    },
+    {
+      "id": "10298",
+      "name": "To Do",
+      "category_key": "new",
+      "category_name": "To Do"
+    },
+    {
+      "id": "10299",
+      "name": "Done",
+      "category_key": "done",
+      "category_name": "Done"
+    },
+    {
+      "id": "10300",
+      "name": "Current Sprint Backlog",
+      "category_key": "new",
+      "category_name": "To Do"
+    },
+    {
+      "id": "10301",
+      "name": "In Progress",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10302",
+      "name": "Done",
+      "category_key": "done",
+      "category_name": "Done"
+    },
+    {
+      "id": "10308",
+      "name": "To Do",
+      "category_key": "new",
+      "category_name": "To Do"
+    },
+    {
+      "id": "10309",
+      "name": "Done",
+      "category_key": "done",
+      "category_name": "Done"
+    },
+    {
+      "id": "10310",
+      "name": "To Do",
+      "category_key": "new",
+      "category_name": "To Do"
+    },
+    {
+      "id": "10311",
+      "name": "Research & Ideation",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10312",
+      "name": "Design",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10314",
+      "name": "Done",
+      "category_key": "done",
+      "category_name": "Done"
+    },
+    {
+      "id": "10315",
+      "name": "To Do",
+      "category_key": "new",
+      "category_name": "To Do"
+    },
+    {
+      "id": "10316",
+      "name": "In Progress",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10317",
+      "name": "Done",
+      "category_key": "done",
+      "category_name": "Done"
+    },
+    {
+      "id": "10318",
+      "name": "IN QA",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10319",
+      "name": "Blocked",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10320",
+      "name": "IN DevOP",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10321",
+      "name": "TO DO",
+      "category_key": "new",
+      "category_name": "To Do"
+    },
+    {
+      "id": "10322",
+      "name": "DESCRIPTION",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10323",
+      "name": "Done",
+      "category_key": "done",
+      "category_name": "Done"
+    },
+    {
+      "id": "10332",
+      "name": "Applications",
+      "category_key": "new",
+      "category_name": "To Do"
+    },
+    {
+      "id": "10333",
+      "name": "Screening",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10334",
+      "name": "Interview",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10335",
+      "name": "Tech interview",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10336",
+      "name": "TOP intervew",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10337",
+      "name": "Rejected",
+      "category_key": "done",
+      "category_name": "Done"
+    },
+    {
+      "id": "10338",
+      "name": "Accepted",
+      "category_key": "done",
+      "category_name": "Done"
+    },
+    {
+      "id": "10344",
+      "name": "To Do",
+      "category_key": "new",
+      "category_name": "To Do"
+    },
+    {
+      "id": "10345",
+      "name": "In Progress",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10346",
+      "name": "Done",
+      "category_key": "done",
+      "category_name": "Done"
+    },
+    {
+      "id": "10352",
+      "name": "To Do",
+      "category_key": "new",
+      "category_name": "To Do"
+    },
+    {
+      "id": "10353",
+      "name": "In Progress",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10354",
+      "name": "Done",
+      "category_key": "done",
+      "category_name": "Done"
+    },
+    {
+      "id": "10355",
+      "name": "Blocked",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10357",
+      "name": "Epics",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10358",
+      "name": "DECLINED",
+      "category_key": "done",
+      "category_name": "Done"
+    },
+    {
+      "id": "10359",
+      "name": "To Do",
+      "category_key": "new",
+      "category_name": "To Do"
+    },
+    {
+      "id": "10360",
+      "name": "In Progress",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10361",
+      "name": "Done",
+      "category_key": "done",
+      "category_name": "Done"
+    },
+    {
+      "id": "10395",
+      "name": "BACKLOG",
+      "category_key": "new",
+      "category_name": "To Do"
+    },
+    {
+      "id": "10396",
+      "name": "In Progress",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10397",
+      "name": "Done",
+      "category_key": "done",
+      "category_name": "Done"
+    },
+    {
+      "id": "10398",
+      "name": "DEMO",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10399",
+      "name": "TESTING",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10400",
+      "name": "BLOCKED",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10458",
+      "name": "To Do",
+      "category_key": "new",
+      "category_name": "To Do"
+    },
+    {
+      "id": "10459",
+      "name": "In Progress",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10460",
+      "name": "Done",
+      "category_key": "done",
+      "category_name": "Done"
+    },
+    {
+      "id": "10491",
+      "name": "QA",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10524",
+      "name": "READY FOR DEPLOYMENT (RFD)",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10557",
+      "name": "To Do",
+      "category_key": "new",
+      "category_name": "To Do"
+    },
+    {
+      "id": "10558",
+      "name": "In Progress",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10559",
+      "name": "Done",
+      "category_key": "done",
+      "category_name": "Done"
+    },
+    {
+      "id": "10560",
+      "name": "Re",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10561",
+      "name": "Design\u2013Check",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10562",
+      "name": "Backlog",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10590",
+      "name": "Trash",
+      "category_key": "done",
+      "category_name": "Done"
+    },
+    {
+      "id": "10623",
+      "name": "APPROVED",
+      "category_key": "done",
+      "category_name": "Done"
+    },
+    {
+      "id": "10656",
+      "name": "Cancelled",
+      "category_key": "done",
+      "category_name": "Done"
+    },
+    {
+      "id": "10755",
+      "name": "Review",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10788",
+      "name": "Review",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10789",
+      "name": "QA IN PROGRESS",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10790",
+      "name": "UAT",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10791",
+      "name": "Ready for Deployment",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10793",
+      "name": "Post Deployment",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10821",
+      "name": "Done",
+      "category_key": "done",
+      "category_name": "Done"
+    },
+    {
+      "id": "10822",
+      "name": "Discovery",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10823",
+      "name": "Parking lot",
+      "category_key": "new",
+      "category_name": "To Do"
+    },
+    {
+      "id": "10824",
+      "name": "Ready for delivery",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10825",
+      "name": "Delivery",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10826",
+      "name": "Impact",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10962",
+      "name": "Waiting approve",
+      "category_key": "new",
+      "category_name": "To Do"
+    },
+    {
+      "id": "10963",
+      "name": "Weekly agenda",
+      "category_key": "new",
+      "category_name": "To Do"
+    },
+    {
+      "id": "10996",
+      "name": "Cancelled",
+      "category_key": "done",
+      "category_name": "Done"
+    },
+    {
+      "id": "11029",
+      "name": "To Do",
+      "category_key": "new",
+      "category_name": "To Do"
+    },
+    {
+      "id": "11031",
+      "name": "DONE - IN PRODUCTION",
+      "category_key": "done",
+      "category_name": "Done"
+    },
+    {
+      "id": "11033",
+      "name": "In Progress",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "11037",
+      "name": "To Do",
+      "category_key": "new",
+      "category_name": "To Do"
+    },
+    {
+      "id": "11038",
+      "name": "In Development",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "11039",
+      "name": "IN PRODUCTION",
+      "category_key": "done",
+      "category_name": "Done"
+    },
+    {
+      "id": "11040",
+      "name": "ANALYSIS/DISCOVERY",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "11041",
+      "name": "CODE REVIEW/PEER REVIEW",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "11042",
+      "name": "QA/UAT/TESTING",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "11043",
+      "name": "READY FOR RELEASE",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "11044",
+      "name": "STAKEHOLDER/COMPLIANCE REVIEW",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "11045",
+      "name": "To Do",
+      "category_key": "new",
+      "category_name": "To Do"
+    },
+    {
+      "id": "11046",
+      "name": "IN DEVELOPMENT",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "11047",
+      "name": "Done",
+      "category_key": "done",
+      "category_name": "Done"
+    },
+    {
+      "id": "11048",
+      "name": "ANALYSIS/DISCOVERY",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "11049",
+      "name": "CODE REVIEW",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "11050",
+      "name": "STAKEHOLDER/COMPLIANCE REVIEW",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "11051",
+      "name": "READY FOR RELEASE",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "11052",
+      "name": "QA/UAT/TESTING",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "11085",
+      "name": "ANALYSIS/DISCOVERY",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "11122",
+      "name": "QA",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "11155",
+      "name": "Ready For Review",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "11156",
+      "name": "QA Test UAT",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "11157",
+      "name": "Post Deployment Test",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "11257",
+      "name": "Done",
+      "category_key": "done",
+      "category_name": "Done"
+    },
+    {
+      "id": "11258",
+      "name": "Parking lot",
+      "category_key": "new",
+      "category_name": "To Do"
+    },
+    {
+      "id": "11259",
+      "name": "Ready for delivery",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "11260",
+      "name": "Discovery",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "11261",
+      "name": "Impact",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "11262",
+      "name": "Delivery",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "11295",
+      "name": "VALIDATION | DEVELOPMENT",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "11297",
+      "name": "IN DISCOVERY",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "11298",
+      "name": "IN PROGRESS",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "11299",
+      "name": "DONE",
+      "category_key": "done",
+      "category_name": "Done"
+    },
+    {
+      "id": "11365",
+      "name": "To Do",
+      "category_key": "new",
+      "category_name": "To Do"
+    },
+    {
+      "id": "11366",
+      "name": "In Progress",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "11367",
+      "name": "Done",
+      "category_key": "done",
+      "category_name": "Done"
+    },
+    {
+      "id": "11400",
+      "name": "Analysis review",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "11510",
+      "name": "In progress",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "11613",
+      "name": "ON HOLD",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "11615",
+      "name": "To Do",
+      "category_key": "new",
+      "category_name": "To Do"
+    },
+    {
+      "id": "11616",
+      "name": "In Progress",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "11617",
+      "name": "Done",
+      "category_key": "done",
+      "category_name": "Done"
+    },
+    {
+      "id": "11619",
+      "name": "ON HOLD",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    }
+  ],
+  "workflow_statuses": [
+    {
+      "id": "10789",
+      "name": "QA IN PROGRESS",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "3",
+      "name": "In Progress",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10005",
+      "name": "Done",
+      "category_key": "done",
+      "category_name": "Done"
+    },
+    {
+      "id": "10788",
+      "name": "Review",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10021",
+      "name": "Backlog",
+      "category_key": "new",
+      "category_name": "To Do"
+    },
+    {
+      "id": "10028",
+      "name": "Ready for QA",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10791",
+      "name": "Ready for Deployment",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10793",
+      "name": "Post Deployment",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10003",
+      "name": "To Do",
+      "category_key": "new",
+      "category_name": "To Do"
+    },
+    {
+      "id": "10996",
+      "name": "Cancelled",
+      "category_key": "done",
+      "category_name": "Done"
+    },
+    {
+      "id": "10319",
+      "name": "Blocked",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10320",
+      "name": "IN DevOP",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    },
+    {
+      "id": "10318",
+      "name": "IN QA",
+      "category_key": "indeterminate",
+      "category_name": "In Progress"
+    }
+  ],
+  "boards": [
+    {
+      "id": 221,
+      "name": "The Loan board",
+      "type": "kanban"
+    }
+  ],
+  "board_configuration": {
+    "id": 221,
+    "name": "The Loan board",
+    "type": "kanban",
+    "self": "https://renmoney.atlassian.net/rest/agile/1.0/board/221/configuration",
+    "location": {
+      "type": "project",
+      "key": "TL",
+      "id": "10250",
+      "self": "https://renmoney.atlassian.net/rest/api/2/project/10250",
+      "name": "The Loan"
+    },
+    "filter": {
+      "id": "10331",
+      "self": "https://renmoney.atlassian.net/rest/api/2/filter/10331"
+    },
+    "subQuery": {
+      "query": "fixVersion in unreleasedVersions() OR fixVersion is EMPTY"
+    },
+    "columnConfig": {
+      "columns": [
+        {
+          "name": "Backlog",
+          "statuses": []
+        },
+        {
+          "name": "Grooming",
+          "statuses": [
+            {
+              "id": "10021",
+              "self": "https://renmoney.atlassian.net/rest/api/2/status/10021"
+            }
+          ]
+        },
+        {
+          "name": "To Do",
+          "statuses": [
+            {
+              "id": "10003",
+              "self": "https://renmoney.atlassian.net/rest/api/2/status/10003"
+            }
+          ]
+        },
+        {
+          "name": "In Progress",
+          "statuses": [
+            {
+              "id": "3",
+              "self": "https://renmoney.atlassian.net/rest/api/2/status/3"
+            },
+            {
+              "id": "10320",
+              "self": "https://renmoney.atlassian.net/rest/api/2/status/10320"
+            }
+          ],
+          "max": 6
+        },
+        {
+          "name": "REVIEW",
+          "statuses": [
+            {
+              "id": "10788",
+              "self": "https://renmoney.atlassian.net/rest/api/2/status/10788"
+            }
+          ]
+        },
+        {
+          "name": "READY FOR QA",
+          "statuses": [
+            {
+              "id": "10028",
+              "self": "https://renmoney.atlassian.net/rest/api/2/status/10028"
+            }
+          ]
+        },
+        {
+          "name": "QA IN PROGRESS",
+          "statuses": [
+            {
+              "id": "10789",
+              "self": "https://renmoney.atlassian.net/rest/api/2/status/10789"
+            },
+            {
+              "id": "10318",
+              "self": "https://renmoney.atlassian.net/rest/api/2/status/10318"
+            },
+            {
+              "id": "10790",
+              "self": "https://renmoney.atlassian.net/rest/api/2/status/10790"
+            }
+          ],
+          "max": 5
+        },
+        {
+          "name": "READY FOR DEPLOYMENT",
+          "statuses": [
+            {
+              "id": "10791",
+              "self": "https://renmoney.atlassian.net/rest/api/2/status/10791"
+            }
+          ]
+        },
+        {
+          "name": "POST DEPLOYMENT",
+          "statuses": [
+            {
+              "id": "10793",
+              "self": "https://renmoney.atlassian.net/rest/api/2/status/10793"
+            }
+          ]
+        },
+        {
+          "name": "Done",
+          "statuses": [
+            {
+              "id": "10005",
+              "self": "https://renmoney.atlassian.net/rest/api/2/status/10005"
+            }
+          ]
+        }
+      ],
+      "constraintType": "issueCount"
+    },
+    "ranking": {}
+  },
+  "discovered_at": "2026-07-06T08:41:24.445822Z"
+}

@@ -1,0 +1,27 @@
+[
+  {
+    "issueKey": "TL-123",
+    "changeHistories": [
+      {
+        "id": "1001",
+        "created": "2025-01-01T10:00:00.000+0000",
+        "items": [{"field": "status", "from": "1", "fromString": "To Do", "to": "2", "toString": "In Progress"}]
+      },
+      {
+        "id": "1002",
+        "created": "2025-01-02T10:00:00.000+0000",
+        "items": [{"field": "status", "from": "2", "fromString": "In Progress", "to": "3", "toString": "Code Review"}]
+      },
+      {
+        "id": "1003",
+        "created": "2025-01-03T10:00:00.000+0000",
+        "items": [{"field": "status", "from": "3", "fromString": "Code Review", "to": "4", "toString": "QA"}]
+      },
+      {
+        "id": "1004",
+        "created": "2025-01-04T10:00:00.000+0000",
+        "items": [{"field": "status", "from": "4", "fromString": "QA", "to": "5", "toString": "Done"}]
+      }
+    ]
+  }
+]
