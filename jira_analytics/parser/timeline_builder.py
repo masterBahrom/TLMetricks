@@ -8,6 +8,7 @@ from datetime import datetime
 from typing import Any
 
 from jira_analytics.models.timeline import (
+    FlaggedPeriod,
     IssueTimeline,
     StatusPeriod,
     StatusRegistry,
@@ -28,6 +29,15 @@ class StatusTransition:
     from_name: str | None
     to_id: str | None
     to_name: str | None
+
+
+@dataclass(frozen=True)
+class FlaggedTransition:
+    """A Jira Flagged field state change extracted from changelog history."""
+
+    at: datetime
+    history_id: str
+    is_flagged: bool
 
 
 class TimelineBuilder:
@@ -87,6 +97,7 @@ class TimelineBuilder:
         current_status = fields.get("status", {}) or {}
 
         transitions = deduplicate_transitions(extract_status_transitions(histories))
+        flagged_transitions = deduplicate_flagged_transitions(extract_flagged_transitions(histories))
 
         warnings: list[str] = []
         if not transitions:
@@ -99,6 +110,13 @@ class TimelineBuilder:
             transitions=transitions,
             warnings=warnings,
         )
+        flagged_periods = build_flagged_periods(
+            flagged_transitions,
+            created_at=created_at,
+            first_terminal_at=first_terminal_at(periods),
+            reference_time=self._reference_time,
+            warnings=warnings,
+        )
 
         return IssueTimeline(
             issue_key=issue_key,
@@ -106,6 +124,7 @@ class TimelineBuilder:
             created_at=created_at,
             resolution_at=resolution_at,
             periods=periods,
+            flagged_periods=flagged_periods,
             warnings=warnings,
         )
 
@@ -452,3 +471,133 @@ def deduplicate_transitions(transitions: list[StatusTransition]) -> list[StatusT
         unique.append(transition)
 
     return unique
+
+
+def extract_flagged_transitions(histories: list[dict[str, Any]]) -> list[FlaggedTransition]:
+    """Extract and sort Jira Flagged/Impediment transitions from changelog histories."""
+    transitions: list[FlaggedTransition] = []
+
+    for history in histories:
+        history_id = str(history.get("id", ""))
+        created = parse_jira_datetime(history.get("created"))
+        if created is None:
+            continue
+
+        for item in history.get("items", []):
+            field = item.get("field") or ""
+            field_id = item.get("fieldId") or ""
+            if field != "Flagged" and field_id != "customfield_10021":
+                continue
+
+            from_flagged = _has_impediment_value(item.get("from"), item.get("fromString"))
+            to_flagged = _has_impediment_value(item.get("to"), item.get("toString"))
+            if from_flagged == to_flagged:
+                continue
+
+            transitions.append(
+                FlaggedTransition(
+                    at=created,
+                    history_id=history_id,
+                    is_flagged=to_flagged,
+                )
+            )
+
+    transitions.sort(key=lambda transition: (transition.at, transition.history_id))
+    return transitions
+
+
+def deduplicate_flagged_transitions(transitions: list[FlaggedTransition]) -> list[FlaggedTransition]:
+    """Remove duplicate Flagged state changes at the same timestamp."""
+    seen: set[tuple[str, bool]] = set()
+    unique: list[FlaggedTransition] = []
+
+    for transition in transitions:
+        key = (transition.at.isoformat(), transition.is_flagged)
+        if key in seen:
+            continue
+        seen.add(key)
+        unique.append(transition)
+
+    return unique
+
+
+def build_flagged_periods(
+    transitions: list[FlaggedTransition],
+    *,
+    created_at: datetime,
+    first_terminal_at: datetime | None,
+    reference_time: datetime,
+    warnings: list[str],
+) -> list[FlaggedPeriod]:
+    """Build merged Flagged intervals, preserving post-terminal periods for audit."""
+    raw: list[tuple[datetime, datetime, bool]] = []
+    open_start: datetime | None = None
+
+    for transition in transitions:
+        if transition.is_flagged:
+            if open_start is None:
+                open_start = transition.at
+            else:
+                warnings.append(
+                    f"Duplicate Flagged add at {transition.at.isoformat()}; keeping existing open interval"
+                )
+            continue
+
+        if open_start is None:
+            warnings.append(f"Duplicate Flagged remove at {transition.at.isoformat()}; no open interval")
+            continue
+        raw.append((open_start, transition.at, False))
+        open_start = None
+
+    if open_start is not None:
+        end = first_terminal_at or reference_time
+        raw.append((open_start, end, True))
+
+    clamped: list[tuple[datetime, datetime, bool]] = []
+    for start, end, is_open in raw:
+        start = max(start, created_at)
+        end = max(end, start)
+        if end <= start:
+            continue
+        clamped.append((start, end, is_open))
+
+    return _merge_flagged_periods(clamped)
+
+
+def first_terminal_at(periods: list[StatusPeriod]) -> datetime | None:
+    """Return the first terminal status entry timestamp."""
+    for period in periods:
+        if period.is_done:
+            return period.entered_at
+    return None
+
+
+def _merge_flagged_periods(intervals: list[tuple[datetime, datetime, bool]]) -> list[FlaggedPeriod]:
+    if not intervals:
+        return []
+
+    intervals.sort(key=lambda interval: (interval[0], interval[1]))
+    merged: list[tuple[datetime, datetime, bool]] = []
+    for start, end, is_open in intervals:
+        if not merged or start > merged[-1][1]:
+            merged.append((start, end, is_open))
+            continue
+
+        previous_start, previous_end, previous_open = merged[-1]
+        merged[-1] = (previous_start, max(previous_end, end), previous_open or is_open)
+
+    return [
+        FlaggedPeriod(
+            started_at=start,
+            ended_at=end,
+            duration_seconds=duration_seconds(start, end),
+            is_open=is_open,
+        )
+        for start, end, is_open in merged
+    ]
+
+
+def _has_impediment_value(raw_value: Any, raw_string: Any) -> bool:
+    """True when the Flagged field carries a meaningful Impediment value."""
+    text = f"{raw_value or ''} {raw_string or ''}".strip().lower()
+    return bool(text) and ("impediment" in text or text not in {"[]", "none", "null"})

@@ -152,6 +152,38 @@ class ReopenAnalytics(BaseModel):
     most_reopened: list[ReopenedIssueEntry] = Field(default_factory=list)
 
 
+class BlockedIssueEntry(BaseModel):
+    """Issue with blocked time."""
+
+    issue_key: str
+    blocked_time_seconds: float
+    blocked_time_hours: float
+    current_status: str | None = None
+    assignee: str | None = None
+
+
+class BlockedGroupTotal(BaseModel):
+    """Blocked time grouped by a current issue attribute."""
+
+    name: str
+    total_seconds: float
+    total_hours: float
+    issue_count: int
+
+
+class BlockedAnalytics(BaseModel):
+    """Blocked-time analytics."""
+
+    total_blocked_issues: int = 0
+    blocked_percent: float | None = None
+    average_blocked_seconds: float | None = None
+    median_blocked_seconds: float | None = None
+    p90_blocked_seconds: float | None = None
+    top_blocked_issues: list[BlockedIssueEntry] = Field(default_factory=list)
+    by_current_status: list[BlockedGroupTotal] = Field(default_factory=list)
+    by_assignee: list[BlockedGroupTotal] = Field(default_factory=list)
+
+
 class AnalyticsSummary(BaseModel):
     """Headline analytics summary."""
 
@@ -163,6 +195,8 @@ class AnalyticsSummary(BaseModel):
     average_flow_efficiency_percent: float | None = None
     reopen_percent: float = 0.0
     average_aging_hours: float | None = None
+    blocked_issue_percent: float | None = None
+    median_blocked_hours: float | None = None
 
 
 class TrendAnalytics(BaseModel):
@@ -193,4 +227,5 @@ class AnalyticsDocument(BaseModel):
     queues: QueueAnalytics
     bottlenecks: BottleneckAnalytics
     aging: AgingAnalytics
+    blocked: BlockedAnalytics = Field(default_factory=BlockedAnalytics)
     throughput: ThroughputTimeline

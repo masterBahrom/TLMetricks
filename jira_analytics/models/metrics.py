@@ -10,7 +10,7 @@ from jira_analytics.utils.datetime_utils import utc_now
 from jira_analytics.utils.stats import seconds_to_days, seconds_to_hours
 
 
-METRICS_SCHEMA_VERSION = "2.1"
+METRICS_SCHEMA_VERSION = "2.2"
 
 
 class StatusPeriodMetrics(BaseModel):
@@ -78,6 +78,8 @@ class IssueMetrics(BaseModel):
     cycle_time_seconds: float | None = None
     cycle_time_hours: float | None = None
     cycle_time_days: float | None = None
+    net_cycle_time_seconds: float | None = None
+    net_cycle_time_hours: float | None = None
 
     resolution_time_seconds: float | None = None
     resolution_time_hours: float | None = None
@@ -91,10 +93,15 @@ class IssueMetrics(BaseModel):
     terminal_time_hours: float = 0.0
     waiting_time_seconds: float = 0.0
     waiting_time_hours: float = 0.0
+    blocked_time_seconds: float = 0.0
+    blocked_time_hours: float = 0.0
+    terminal_blocked_time_seconds: float = 0.0
+    terminal_blocked_time_hours: float = 0.0
     time_to_first_progress_seconds: float | None = None
     time_to_first_progress_hours: float | None = None
 
     flow_efficiency_percent: float | None = None
+    net_flow_efficiency_percent: float | None = None
 
     time_in_status: list[TimeInStatus] = Field(default_factory=list)
     status_periods: list[StatusPeriodMetrics] = Field(default_factory=list)
@@ -127,6 +134,8 @@ class ProjectMetrics(BaseModel):
     average_cycle_time_seconds: float | None = None
     median_cycle_time_seconds: float | None = None
     p90_cycle_time_seconds: float | None = None
+    average_net_cycle_time_seconds: float | None = None
+    median_net_cycle_time_seconds: float | None = None
 
     average_time_to_first_progress_seconds: float | None = None
     average_active_time_seconds: float | None = None
@@ -136,6 +145,14 @@ class ProjectMetrics(BaseModel):
     p90_buffer_time_seconds: float | None = None
     p95_buffer_time_seconds: float | None = None
     total_buffer_time_seconds: float | None = None
+    average_blocked_time_seconds: float | None = None
+    median_blocked_time_seconds: float | None = None
+    p75_blocked_time_seconds: float | None = None
+    p90_blocked_time_seconds: float | None = None
+    p95_blocked_time_seconds: float | None = None
+    blocked_issue_count: int = 0
+    blocked_issue_percent: float | None = None
+    average_net_flow_efficiency_percent: float | None = None
     average_waiting_time_seconds: float | None = None
     average_reopens: float = 0.0
 
@@ -181,10 +198,14 @@ class MetricsSummary(BaseModel):
     throughput: int
     median_lead_time_hours: float | None = None
     median_cycle_time_hours: float | None = None
+    median_net_cycle_time_hours: float | None = None
     p90_lead_time_hours: float | None = None
     average_active_time_hours: float | None = None
     median_buffer_time_hours: float | None = None
+    median_blocked_time_hours: float | None = None
+    blocked_issue_percent: float | None = None
     average_waiting_time_hours: float | None = None
+    average_net_flow_efficiency_percent: float | None = None
     average_reopens: float = 0.0
     bug_rate_percent: float | None = None
 
@@ -225,6 +246,9 @@ class MetricsDocument(BaseModel):
             median_cycle_time_hours=seconds_to_hours(project.median_cycle_time_seconds)
             if project.median_cycle_time_seconds is not None
             else None,
+            median_net_cycle_time_hours=seconds_to_hours(project.median_net_cycle_time_seconds)
+            if project.median_net_cycle_time_seconds is not None
+            else None,
             p90_lead_time_hours=seconds_to_hours(project.p90_lead_time_seconds)
             if project.p90_lead_time_seconds is not None
             else None,
@@ -234,9 +258,14 @@ class MetricsDocument(BaseModel):
             median_buffer_time_hours=seconds_to_hours(project.median_buffer_time_seconds)
             if project.median_buffer_time_seconds is not None
             else None,
+            median_blocked_time_hours=seconds_to_hours(project.median_blocked_time_seconds)
+            if project.median_blocked_time_seconds is not None
+            else None,
+            blocked_issue_percent=project.blocked_issue_percent,
             average_waiting_time_hours=seconds_to_hours(project.average_waiting_time_seconds)
             if project.average_waiting_time_seconds is not None
             else None,
+            average_net_flow_efficiency_percent=project.average_net_flow_efficiency_percent,
             average_reopens=project.average_reopens,
             bug_rate_percent=project.bug_rate_percent,
         )

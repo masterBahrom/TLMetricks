@@ -19,6 +19,7 @@ from dashboard.refresh import check_credentials, run_pipeline
 from dashboard.tables import issues_to_dataframe
 from dashboard.views import (
     aging,
+    blocked_analysis,
     bottlenecks,
     buffer_analysis,
     bug_analysis,
@@ -41,6 +42,7 @@ PAGES: dict[str, object] = {
     "Throughput": throughput.render,
     "Flow Analysis": flow.render,
     "Buffer Analysis": buffer_analysis.render,
+    "Blocked Analysis": blocked_analysis.render,
     "Bug Analysis": bug_analysis.render,
     "Aging": aging.render,
     "Status Analysis": status.render,

@@ -46,6 +46,7 @@ SHEET_NAMES = [
     "Executive Summary",
     "Lead Time",
     "Buffer Analysis",
+    "Blocked Analysis",
     "Throughput",
     "Flow Analysis",
     "Bug Analysis",
@@ -84,6 +85,7 @@ class ExcelReportBuilder:
         lead_ws = wb.create_sheet("Lead Time")
         self._build_lead_time(lead_ws)
         self._build_buffer_analysis(wb.create_sheet("Buffer Analysis"))
+        self._build_blocked_analysis(wb.create_sheet("Blocked Analysis"))
         throughput_ws = wb.create_sheet("Throughput")
         self._build_throughput(throughput_ws)
         flow_ws = wb.create_sheet("Flow Analysis")
@@ -355,7 +357,9 @@ class ExcelReportBuilder:
             "Summary",
             "Lead Time (h)",
             "Cycle Time (h)",
+            "Net Cycle Time (h)",
             "Buffer Time (h)",
+            "Blocked Time (h)",
             "Time to First Progress (h)",
             "Waiting Time (h)",
             "Active Time (h)",
@@ -374,7 +378,9 @@ class ExcelReportBuilder:
                 issue.summary or "—",
                 issue.lead_time_hours,
                 issue.cycle_time_hours,
+                issue.net_cycle_time_hours,
                 issue.buffer_time_hours,
+                issue.blocked_time_hours,
                 issue.time_to_first_progress_hours,
                 issue.waiting_time_hours,
                 issue.total_active_time_hours,
@@ -387,7 +393,16 @@ class ExcelReportBuilder:
             headers,
             rows,
             table_name="LeadTime",
-            number_cols={3: "hours", 4: "hours", 5: "hours", 6: "hours", 7: "hours", 8: "hours"},
+            number_cols={
+                3: "hours",
+                4: "hours",
+                5: "hours",
+                6: "hours",
+                7: "hours",
+                8: "hours",
+                9: "hours",
+                10: "hours",
+            },
         )
 
         stats = self._lead_time_stats()
@@ -464,6 +479,74 @@ class ExcelReportBuilder:
             table_name="BufferTop20",
             start_row=table_start,
             number_cols={3: "hours", 4: "hours", 5: "hours", 6: "percent"},
+        )
+
+    # ------------------------------------------------------- Blocked Analysis
+
+    def _build_blocked_analysis(self, ws) -> None:
+        project = self.metrics.project
+        ws.sheet_view.showGridLines = False
+        style_title(ws, 1, 1, "Blocked Analysis", merge_to_col=7)
+
+        stat_labels = [
+            ("Average Blocked (h)", project.average_blocked_time_seconds),
+            ("Median Blocked (h)", project.median_blocked_time_seconds),
+            ("P75 Blocked (h)", project.p75_blocked_time_seconds),
+            ("P90 Blocked (h)", project.p90_blocked_time_seconds),
+            ("P95 Blocked (h)", project.p95_blocked_time_seconds),
+            ("Blocked Issue %", project.blocked_issue_percent),
+        ]
+        for idx, (label, value) in enumerate(stat_labels, start=3):
+            ws.cell(row=idx, column=1, value=label).font = KPI_LABEL_FONT
+            if value is not None and "Blocked (h)" in label:
+                cell_value = value / 3600
+            elif value is not None and label.endswith("%"):
+                cell_value = value / 100
+            else:
+                cell_value = value
+            cell = ws.cell(row=idx, column=2, value=cell_value if cell_value is not None else "N/A")
+            if value is not None:
+                percent_format(cell) if label.endswith("%") else hours_format(cell)
+
+        headers = [
+            "Issue Key",
+            "Summary",
+            "Blocked (h)",
+            "Terminal Blocked (h)",
+            "Lead (h)",
+            "Net Cycle (h)",
+            "Net Flow Efficiency (%)",
+            "Status",
+            "Assignee",
+        ]
+        blocked_issues = sorted(
+            [issue for issue in self.metrics.issues if issue.blocked_time_seconds > 0],
+            key=lambda i: i.blocked_time_seconds,
+            reverse=True,
+        )[:20]
+        rows = [
+            [
+                issue.issue_key,
+                issue.summary or "—",
+                issue.blocked_time_hours,
+                issue.terminal_blocked_time_hours,
+                issue.lead_time_hours,
+                issue.net_cycle_time_hours,
+                issue.net_flow_efficiency_percent / 100 if issue.net_flow_efficiency_percent is not None else None,
+                issue.current_status or "—",
+                issue.assignee or "—",
+            ]
+            for issue in blocked_issues
+        ]
+        table_start = 11
+        ws.cell(row=table_start - 1, column=1, value="Top 20 Issues by Blocked Time").font = Font(bold=True, size=12)
+        self._write_data_table(
+            ws,
+            headers,
+            rows,
+            table_name="BlockedTop20",
+            start_row=table_start,
+            number_cols={3: "hours", 4: "hours", 5: "hours", 6: "hours", 7: "percent"},
         )
 
     # ----------------------------------------------------------- Bug Analysis

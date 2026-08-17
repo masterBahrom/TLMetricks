@@ -23,8 +23,11 @@ def render(data: DashboardData, filters: FilterState) -> None:
         column_config={
             "Lead Time (h)": st.column_config.NumberColumn(format="%.1f"),
             "Cycle Time (h)": st.column_config.NumberColumn(format="%.1f"),
+            "Net Cycle Time (h)": st.column_config.NumberColumn(format="%.1f"),
             "Waiting (h)": st.column_config.NumberColumn(format="%.1f"),
+            "Blocked Time (h)": st.column_config.NumberColumn(format="%.1f"),
             "Flow Efficiency (%)": st.column_config.NumberColumn(format="%.1f"),
+            "Net Flow Efficiency (%)": st.column_config.NumberColumn(format="%.1f"),
             "Reopened": st.column_config.CheckboxColumn(),
         },
     )

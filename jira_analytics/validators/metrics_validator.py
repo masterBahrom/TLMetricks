@@ -80,6 +80,13 @@ class MetricsValidator:
 
         if issue.flow_efficiency_percent is not None and issue.flow_efficiency_percent > 100.0 + 0.01:
             report.add(key, "error", "FLOW_EFFICIENCY_HIGH", f"Flow efficiency > 100%: {issue.flow_efficiency_percent}")
+        if issue.net_flow_efficiency_percent is not None and issue.net_flow_efficiency_percent > 100.0 + 0.01:
+            report.add(
+                key,
+                "error",
+                "NET_FLOW_EFFICIENCY_HIGH",
+                f"Net flow efficiency > 100%: {issue.net_flow_efficiency_percent}",
+            )
 
         if issue.cycle_time_seconds is not None and issue.lead_time_seconds is not None:
             if issue.cycle_time_seconds > issue.lead_time_seconds + TOLERANCE_SECONDS:
@@ -89,18 +96,28 @@ class MetricsValidator:
                     "CYCLE_EXCEEDS_LEAD",
                     f"Cycle ({issue.cycle_time_seconds}s) > Lead ({issue.lead_time_seconds}s)",
                 )
+        if (
+            issue.net_cycle_time_seconds is not None
+            and issue.cycle_time_seconds is not None
+            and issue.net_cycle_time_seconds > issue.cycle_time_seconds + TOLERANCE_SECONDS
+        ):
+            report.add(key, "error", "NET_CYCLE_EXCEEDS_RAW", "Net Cycle Time exceeds raw Cycle Time")
 
     def _check_finite_values(self, issue: IssueMetrics, report: MetricsValidationReport) -> None:
         numeric_fields = [
             issue.lead_time_seconds,
             issue.cycle_time_seconds,
+            issue.net_cycle_time_seconds,
             issue.resolution_time_seconds,
             issue.total_active_time_seconds,
             issue.buffer_time_seconds,
+            issue.blocked_time_seconds,
+            issue.terminal_blocked_time_seconds,
             issue.terminal_time_seconds,
             issue.waiting_time_seconds,
             issue.time_to_first_progress_seconds,
             issue.flow_efficiency_percent,
+            issue.net_flow_efficiency_percent,
         ]
         for value in numeric_fields:
             if not is_finite(value):
@@ -111,8 +128,11 @@ class MetricsValidator:
         for name, value in (
             ("lead_time", issue.lead_time_seconds),
             ("cycle_time", issue.cycle_time_seconds),
+            ("net_cycle_time", issue.net_cycle_time_seconds),
             ("buffer_time", issue.buffer_time_seconds),
             ("active_time", issue.total_active_time_seconds),
+            ("blocked_time", issue.blocked_time_seconds),
+            ("terminal_blocked_time", issue.terminal_blocked_time_seconds),
             ("terminal_time", issue.terminal_time_seconds),
         ):
             if value is not None and value < 0:

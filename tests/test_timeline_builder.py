@@ -8,7 +8,7 @@ from jira_analytics.models.timeline import TimelinesDocument
 from jira_analytics.parser.timeline_builder import TimelineBuilder
 from jira_analytics.validators import TimelineValidator
 
-from tests.conftest import REFERENCE, history, make_issue, make_registry
+from tests.conftest import REFERENCE, flagged_history, history, make_issue, make_registry
 
 UTC = timezone.utc
 
@@ -94,6 +94,47 @@ class TestNoTransitions:
         assert timeline.periods[0].is_current is True
         assert timeline.periods[0].left_at is None
         assert any("No status transitions" in w for w in timeline.warnings)
+
+
+class TestFlaggedTimeline:
+    def test_extracts_flagged_periods_from_cached_changelog(self) -> None:
+        issue = make_issue(
+            "TL-F1",
+            created="2025-01-01T09:00:00.000+0000",
+            status_id="9",
+            status_name="Done",
+            resolution="2025-01-01T12:00:00.000+0000",
+        )
+        histories = [
+            history("1", "2025-01-01T10:00:00.000+0000", "2", "To Do", "3", "In Progress"),
+            flagged_history("2", "2025-01-01T10:30:00.000+0000", True),
+            flagged_history("3", "2025-01-01T11:15:00.000+0000", False),
+            history("4", "2025-01-01T12:00:00.000+0000", "3", "In Progress", "9", "Done"),
+        ]
+        timeline = _builder().build_issue_timeline(issue, histories)
+
+        assert len(timeline.flagged_periods) == 1
+        assert timeline.flagged_periods[0].duration_seconds == 45 * 60
+        assert timeline.flagged_periods[0].source == "flagged"
+
+    def test_never_removed_flag_on_completed_issue_ends_at_first_terminal(self) -> None:
+        issue = make_issue(
+            "TL-F2",
+            created="2025-01-01T09:00:00.000+0000",
+            status_id="9",
+            status_name="Done",
+            resolution="2025-01-01T12:00:00.000+0000",
+        )
+        histories = [
+            history("1", "2025-01-01T10:00:00.000+0000", "2", "To Do", "3", "In Progress"),
+            flagged_history("2", "2025-01-01T11:00:00.000+0000", True),
+            history("3", "2025-01-01T12:00:00.000+0000", "3", "In Progress", "9", "Done"),
+        ]
+        timeline = _builder().build_issue_timeline(issue, histories)
+
+        assert len(timeline.flagged_periods) == 1
+        assert timeline.flagged_periods[0].ended_at == datetime(2025, 1, 1, 12, 0, tzinfo=UTC)
+        assert timeline.flagged_periods[0].is_open is True
 
 
 class TestSingleTransition:
