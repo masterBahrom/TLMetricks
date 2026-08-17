@@ -25,7 +25,7 @@ def parse_jira_datetime(value: str | int | float | None) -> datetime | None:
         return None
 
     # Normalize timezone offsets like +0000 → +00:00
-    if len(text) > 5 and text[-5] in "+-" and text[-3:].isdigit() and text[-5:-2].isdigit():
+    if len(text) > 5 and text[-5] in "+-" and text[-4:].isdigit():
         if ":" not in text[-6:]:
             text = f"{text[:-5]}{text[-5:-2]}:{text[-2:]}"
 

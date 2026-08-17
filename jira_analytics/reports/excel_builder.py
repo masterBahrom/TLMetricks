@@ -410,7 +410,7 @@ class ExcelReportBuilder:
         ws.cell(row=stats_row, column=1, value="Lead Time Statistics").font = Font(bold=True, size=12)
         stat_labels = ["Average", "Median", "P75", "P90", "P95", "Maximum"]
         stat_keys = ["average", "median", "p75", "p90", "p95", "maximum"]
-        for col, (label, key) in enumerate(zip(stat_labels, stat_keys, strict=True), start=1):
+        for col, (label, key) in enumerate(zip(stat_labels, stat_keys), start=1):
             ws.cell(row=stats_row + 1, column=col, value=label).font = KPI_LABEL_FONT
             val = stats[key]
             cell = ws.cell(row=stats_row + 2, column=col, value=val)
