@@ -15,28 +15,27 @@ def render(data: DashboardData, filters: FilterState) -> None:
         st.caption("Flow metrics are sourced from analytics.json (full dataset).")
 
     flow = data.analytics.flow
-    queues = {entry.category: entry for entry in data.analytics.queues.categories}
+    project = data.metrics.project
+    totals = {
+        "Active": sum(issue.total_active_time_seconds for issue in data.issues),
+        "Buffer": sum(issue.buffer_time_seconds for issue in data.issues),
+        "Blocked": sum(issue.blocked_time_seconds for issue in data.issues),
+        "Waiting/Other": sum(issue.waiting_time_seconds for issue in data.issues),
+    }
 
     col1, col2, col3 = st.columns(3)
-    col1.metric("Flow Efficiency (avg)", f"{flow.average_efficiency_percent:.1f}%" if flow.average_efficiency_percent else "N/A")
-    col2.metric("Flow Efficiency (median)", f"{flow.median_efficiency_percent:.1f}%" if flow.median_efficiency_percent else "N/A")
-    col3.metric("Total Flow Time (h)", f"{data.analytics.queues.total_seconds / 3600:.1f}")
+    col1.metric("Gross Flow Efficiency (avg)", f"{flow.average_efficiency_percent:.1f}%" if flow.average_efficiency_percent else "N/A")
+    col2.metric(
+        "Net Flow Efficiency (avg)",
+        f"{project.average_net_flow_efficiency_percent:.1f}%"
+        if project.average_net_flow_efficiency_percent is not None
+        else "N/A",
+    )
+    col3.metric("Total Blocked Time (h)", f"{totals['Blocked'] / 3600:.1f}")
 
-    labels: list[str] = []
-    values: list[float] = []
-    mapping = [
-        ("Queue", "queue"),
-        ("Waiting", "waiting"),
-        ("QA", "qa"),
-        ("Review", "review"),
-        ("Development", "active"),
-        ("Done", "done"),
-    ]
-    for label, key in mapping:
-        entry = queues.get(key)
-        if entry:
-            labels.append(label)
-            values.append(entry.percent_of_total)
+    total_seconds = sum(totals.values())
+    labels = [label for label, seconds in totals.items() if seconds > 0]
+    values = [seconds / total_seconds * 100 for seconds in totals.values() if seconds > 0] if total_seconds else []
 
     if labels:
         col_a, col_b = st.columns(2)
@@ -49,15 +48,25 @@ def render(data: DashboardData, filters: FilterState) -> None:
             )
 
     rows = []
-    for label, key in mapping:
-        entry = queues.get(key)
-        if entry:
-            rows.append(
-                {
-                    "Category": label,
-                    "Percent": f"{entry.percent_of_total:.1f}%",
-                    "Total Hours": f"{entry.total_hours:.1f}",
-                    "Issues": entry.issue_count,
-                }
-            )
+    for label, seconds in totals.items():
+        if seconds <= 0:
+            continue
+        rows.append(
+            {
+                "Category": label,
+                "Percent": f"{seconds / total_seconds * 100:.1f}%" if total_seconds else "0.0%",
+                "Total Hours": f"{seconds / 3600:.1f}",
+                "Issues": sum(
+                    1
+                    for issue in data.issues
+                    if {
+                        "Active": issue.total_active_time_seconds,
+                        "Buffer": issue.buffer_time_seconds,
+                        "Blocked": issue.blocked_time_seconds,
+                        "Waiting/Other": issue.waiting_time_seconds,
+                    }[label]
+                    > 0
+                ),
+            }
+        )
     st.dataframe(rows, use_container_width=True, hide_index=True)

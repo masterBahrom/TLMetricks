@@ -31,6 +31,16 @@ class StatusPeriod(BaseModel):
     is_done: bool = False
 
 
+class FlaggedPeriod(BaseModel):
+    """A contiguous period where Jira Flagged/Impediment was set."""
+
+    started_at: datetime
+    ended_at: datetime
+    duration_seconds: float = 0.0
+    is_open: bool = False
+    source: str = "flagged"
+
+
 class IssueTimeline(BaseModel):
     """Complete reconstructed lifecycle for one issue."""
 
@@ -39,6 +49,7 @@ class IssueTimeline(BaseModel):
     created_at: datetime
     resolution_at: datetime | None = None
     periods: list[StatusPeriod] = Field(default_factory=list)
+    flagged_periods: list[FlaggedPeriod] = Field(default_factory=list)
     warnings: list[str] = Field(default_factory=list)
 
     @property

@@ -38,6 +38,11 @@ class ProjectAggregator:
 
         lead_times = [issue.lead_time_seconds for issue in done_issues if issue.lead_time_seconds is not None]
         cycle_times = [issue.cycle_time_seconds for issue in done_issues if issue.cycle_time_seconds is not None]
+        net_cycle_times = [
+            issue.net_cycle_time_seconds
+            for issue in done_issues
+            if issue.net_cycle_time_seconds is not None
+        ]
         ttfg_values = [
             issue.time_to_first_progress_seconds
             for issue in issues
@@ -45,6 +50,13 @@ class ProjectAggregator:
         ]
         active_times = [issue.total_active_time_seconds for issue in issues]
         buffer_times = [issue.buffer_time_seconds for issue in issues]
+        blocked_times = [issue.blocked_time_seconds for issue in issues]
+        blocked_issues = [issue for issue in issues if issue.blocked_time_seconds > 0]
+        net_flow_values = [
+            issue.net_flow_efficiency_percent
+            for issue in done_issues
+            if issue.net_flow_efficiency_percent is not None
+        ]
         waiting_times = [issue.waiting_time_seconds for issue in issues]
         reopen_counts = [float(issue.reopen_count) for issue in issues]
 
@@ -63,6 +75,8 @@ class ProjectAggregator:
             average_cycle_time_seconds=safe_mean(cycle_times),
             median_cycle_time_seconds=percentile(cycle_times, 50),
             p90_cycle_time_seconds=percentile(cycle_times, 90),
+            average_net_cycle_time_seconds=safe_mean(net_cycle_times),
+            median_net_cycle_time_seconds=percentile(net_cycle_times, 50),
             average_time_to_first_progress_seconds=safe_mean(ttfg_values),
             average_active_time_seconds=safe_mean(active_times),
             average_buffer_time_seconds=safe_mean(buffer_times),
@@ -71,6 +85,16 @@ class ProjectAggregator:
             p90_buffer_time_seconds=percentile(buffer_times, 90),
             p95_buffer_time_seconds=percentile(buffer_times, 95),
             total_buffer_time_seconds=sum(buffer_times) if buffer_times else None,
+            average_blocked_time_seconds=safe_mean(blocked_times),
+            median_blocked_time_seconds=percentile(blocked_times, 50),
+            p75_blocked_time_seconds=percentile(blocked_times, 75),
+            p90_blocked_time_seconds=percentile(blocked_times, 90),
+            p95_blocked_time_seconds=percentile(blocked_times, 95),
+            blocked_issue_count=len(blocked_issues),
+            blocked_issue_percent=round(len(blocked_issues) / len(issues) * 100, 4) if issues else None,
+            average_net_flow_efficiency_percent=round(safe_mean(net_flow_values), 4)
+            if net_flow_values
+            else None,
             average_waiting_time_seconds=safe_mean(waiting_times),
             average_reopens=safe_mean(reopen_counts) or 0.0,
             completed_bugs=bug_analytics.completed_bugs,

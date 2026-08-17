@@ -40,6 +40,7 @@ class TestRouting:
     def test_all_views_expose_render(self) -> None:
         from dashboard.views import (
             aging,
+            blocked_analysis,
             bottlenecks,
             buffer_analysis,
             bug_analysis,
@@ -60,6 +61,7 @@ class TestRouting:
             throughput,
             flow,
             buffer_analysis,
+            blocked_analysis,
             bug_analysis,
             aging,
             status,
@@ -82,6 +84,7 @@ class TestRouting:
     def test_required_files_only(self, dashboard_data) -> None:
         assert (dashboard_data.cache_dir / "metrics.json").exists()
         assert (dashboard_data.cache_dir / "analytics.json").exists()
+        assert (dashboard_data.cache_dir / "timelines.json").exists()
         assert (dashboard_data.cache_dir / "workflow_analysis.yaml").exists()
 
 
@@ -99,6 +102,7 @@ class TestAppRender:
             "Throughput",
             "Flow Analysis",
             "Buffer Analysis",
+            "Blocked Analysis",
             "Bug Analysis",
             "Aging",
             "Status Analysis",
@@ -167,8 +171,11 @@ class TestTables:
             "Priority",
             "Lead Time (h)",
             "Cycle Time (h)",
+            "Net Cycle Time (h)",
             "Waiting (h)",
+            "Blocked Time (h)",
             "Flow Efficiency (%)",
+            "Net Flow Efficiency (%)",
             "Reopened",
             "Story Points",
         }
@@ -217,6 +224,7 @@ class TestPerformance:
 
         (tmp_path / "metrics.json").write_text(json.dumps(base_metrics))
         (tmp_path / "analytics.json").write_text((CACHE_DIR / "analytics.json").read_text())
+        (tmp_path / "timelines.json").write_text((CACHE_DIR / "timelines.json").read_text())
         (tmp_path / "workflow_analysis.yaml").write_text(
             (CACHE_DIR / "workflow_analysis.yaml").read_text()
         )

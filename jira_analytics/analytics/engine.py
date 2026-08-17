@@ -6,6 +6,7 @@ import logging
 from datetime import datetime
 
 from jira_analytics.analytics.aging import compute_aging
+from jira_analytics.analytics.blocked import compute_blocked_analytics
 from jira_analytics.analytics.bottlenecks import compute_bottlenecks
 from jira_analytics.analytics.flow import compute_flow_efficiency
 from jira_analytics.analytics.models import (
@@ -61,6 +62,7 @@ class AnalyticsEngine:
         status_dist = compute_status_distribution(issues, self._workflow)
         bottlenecks = compute_bottlenecks(issues, self._workflow)
         reopen = compute_reopen_analytics(issues)
+        blocked = compute_blocked_analytics(issues)
 
         summary = AnalyticsSummary(
             project_key=metrics.project.project_key,
@@ -71,6 +73,10 @@ class AnalyticsEngine:
             average_flow_efficiency_percent=flow.average_efficiency_percent,
             reopen_percent=reopen.reopen_percent,
             average_aging_hours=seconds_to_hours(aging.average_seconds) if aging.average_seconds else None,
+            blocked_issue_percent=blocked.blocked_percent,
+            median_blocked_hours=seconds_to_hours(blocked.median_blocked_seconds)
+            if blocked.median_blocked_seconds is not None
+            else None,
         )
 
         document = AnalyticsDocument(
@@ -87,6 +93,7 @@ class AnalyticsEngine:
             queues=queues,
             bottlenecks=bottlenecks,
             aging=aging,
+            blocked=blocked,
             throughput=throughput_timeline,
         )
 

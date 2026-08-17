@@ -7,7 +7,7 @@ from datetime import datetime, timezone
 from jira_analytics.metrics.calculator import MetricCalculator
 from jira_analytics.models.timeline import IssueTimeline, StatusPeriod
 
-from tests.conftest import REFERENCE, history, make_issue, make_registry, make_workflow
+from tests.conftest import REFERENCE, flagged_history, history, make_issue, make_registry, make_workflow
 from jira_analytics.parser.timeline_builder import TimelineBuilder
 
 UTC = timezone.utc
@@ -132,6 +132,112 @@ class TestMultipleActiveStatuses:
         assert "In Progress" in status_names
         assert "Review" in status_names
         assert "QA IN PROGRESS" in status_names
+
+
+class TestBlockedTime:
+    def test_flagged_overlap_is_subtracted_from_active_time(self) -> None:
+        issue = make_issue(
+            "TL-B1",
+            created="2025-01-01T09:00:00.000+0000",
+            status_id="9",
+            status_name="Done",
+            resolution="2025-01-01T18:00:00.000+0000",
+        )
+        histories = [
+            history("1", "2025-01-01T10:00:00.000+0000", "2", "To Do", "3", "In Progress"),
+            flagged_history("2", "2025-01-01T12:00:00.000+0000", True),
+            flagged_history("3", "2025-01-01T15:00:00.000+0000", False),
+            history("4", "2025-01-01T18:00:00.000+0000", "3", "In Progress", "9", "Done"),
+        ]
+        metrics = _calc().calculate(_build(issue, histories))
+
+        assert metrics.total_active_time_seconds == 5 * 3600
+        assert metrics.blocked_time_seconds == 3 * 3600
+        assert metrics.cycle_time_seconds == 8 * 3600
+        assert metrics.net_cycle_time_seconds == 5 * 3600
+        assert metrics.flow_efficiency_percent == round(5 / 9 * 100, 4)
+        assert metrics.net_flow_efficiency_percent == round(5 / 6 * 100, 4)
+
+    def test_flagged_overlap_is_subtracted_from_buffer_time(self) -> None:
+        issue = make_issue(
+            "TL-B2",
+            created="2025-01-01T09:00:00.000+0000",
+            status_id="9",
+            status_name="Done",
+            resolution="2025-01-01T11:00:00.000+0000",
+        )
+        histories = [
+            flagged_history("1", "2025-01-01T09:15:00.000+0000", True),
+            flagged_history("2", "2025-01-01T09:45:00.000+0000", False),
+            history("3", "2025-01-01T10:00:00.000+0000", "2", "To Do", "3", "In Progress"),
+            history("4", "2025-01-01T11:00:00.000+0000", "3", "In Progress", "9", "Done"),
+        ]
+        metrics = _calc().calculate(_build(issue, histories))
+
+        assert metrics.buffer_time_seconds == 30 * 60
+        assert metrics.blocked_time_seconds == 30 * 60
+        assert metrics.total_active_time_seconds == 3600
+
+    def test_terminal_flagged_time_is_audit_only(self) -> None:
+        issue = make_issue(
+            "TL-B3",
+            created="2025-01-01T09:00:00.000+0000",
+            status_id="9",
+            status_name="Done",
+            resolution="2025-01-01T10:00:00.000+0000",
+        )
+        histories = [
+            history("1", "2025-01-01T10:00:00.000+0000", "2", "To Do", "9", "Done"),
+            flagged_history("2", "2025-01-01T11:00:00.000+0000", True),
+            flagged_history("3", "2025-01-01T12:00:00.000+0000", False),
+        ]
+        metrics = _calc().calculate(_build(issue, histories))
+
+        assert metrics.blocked_time_seconds == 0
+        assert metrics.terminal_blocked_time_seconds == 3600
+        assert metrics.buffer_time_seconds == 3600
+
+    def test_never_removed_flag_on_open_issue_ends_at_reference_time(self) -> None:
+        issue = make_issue(
+            "TL-B4",
+            created="2025-06-01T09:00:00.000+0000",
+            status_id="5",
+            status_name="Ready for QA",
+        )
+        histories = [
+            history("1", "2025-06-01T10:00:00.000+0000", "2", "To Do", "5", "Ready for QA"),
+            flagged_history("2", "2025-06-01T11:00:00.000+0000", True),
+        ]
+        timeline = _build(issue, histories)
+        metrics = _calc().calculate(timeline)
+
+        assert timeline.flagged_periods[0].is_open is True
+        assert timeline.flagged_periods[0].ended_at == REFERENCE
+        assert metrics.blocked_time_seconds == 3600
+        assert metrics.buffer_time_seconds == 2 * 3600
+
+    def test_blocked_status_and_flagged_overlap_count_once(self) -> None:
+        issue = make_issue(
+            "TL-B5",
+            created="2025-01-01T09:00:00.000+0000",
+            status_id="9",
+            status_name="Done",
+            resolution="2025-01-01T15:00:00.000+0000",
+        )
+        histories = [
+            history("1", "2025-01-01T10:00:00.000+0000", "2", "To Do", "3", "In Progress"),
+            history("2", "2025-01-01T11:00:00.000+0000", "3", "In Progress", "11", "Blocked"),
+            flagged_history("3", "2025-01-01T12:00:00.000+0000", True),
+            history("4", "2025-01-01T13:00:00.000+0000", "11", "Blocked", "3", "In Progress"),
+            flagged_history("5", "2025-01-01T14:00:00.000+0000", False),
+            history("6", "2025-01-01T15:00:00.000+0000", "3", "In Progress", "9", "Done"),
+        ]
+        metrics = _calc().calculate(_build(issue, histories))
+
+        assert metrics.blocked_time_seconds == 3 * 3600
+        assert metrics.total_active_time_seconds == 2 * 3600
+        assert metrics.cycle_time_seconds == 5 * 3600
+        assert metrics.net_cycle_time_seconds == 2 * 3600
 
 
 class TestMultipleDone:

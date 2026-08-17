@@ -13,8 +13,9 @@ from jira_analytics.analytics.models import AnalyticsDocument
 from jira_analytics.config.loader import PROJECT_ROOT, load_cache_config
 from jira_analytics.config.workflow import WorkflowConfig
 from jira_analytics.models.metrics import IssueMetrics, MetricsDocument
+from jira_analytics.models.timeline import TimelinesDocument
 
-REQUIRED_CACHE_FILES = ("metrics.json", "analytics.json", "workflow_analysis.yaml")
+REQUIRED_CACHE_FILES = ("metrics.json", "analytics.json", "timelines.json", "workflow_analysis.yaml")
 
 
 @dataclass(frozen=True)
@@ -23,6 +24,7 @@ class DashboardData:
 
     metrics: MetricsDocument
     analytics: AnalyticsDocument
+    timelines: TimelinesDocument
     workflow: WorkflowConfig
     cache_dir: Path
     load_time_seconds: float
@@ -79,12 +81,14 @@ def load_dashboard_data(cache_dir: str | None = None) -> DashboardData:
 
     metrics = MetricsDocument.model_validate_json((directory / "metrics.json").read_text())
     analytics = AnalyticsDocument.model_validate_json((directory / "analytics.json").read_text())
+    timelines = TimelinesDocument.model_validate_json((directory / "timelines.json").read_text())
     workflow_data = yaml.safe_load((directory / "workflow_analysis.yaml").read_text()) or {}
     workflow = WorkflowConfig.model_validate(workflow_data)
 
     return DashboardData(
         metrics=metrics,
         analytics=analytics,
+        timelines=timelines,
         workflow=workflow,
         cache_dir=directory,
         load_time_seconds=perf_counter() - started,

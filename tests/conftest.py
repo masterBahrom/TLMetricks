@@ -40,6 +40,7 @@ def make_registry() -> StatusRegistry:
         "8": StatusRegistryEntry(status_id="8", status_name="Post Deployment", status_category="done"),
         "9": StatusRegistryEntry(status_id="9", status_name="Done", status_category="done"),
         "10": StatusRegistryEntry(status_id="10", status_name="Cancelled", status_category="done"),
+        "11": StatusRegistryEntry(status_id="11", status_name="Blocked", status_category="undefined"),
     }
     return StatusRegistry(statuses=statuses)
 
@@ -90,3 +91,16 @@ def history(history_id: str, created: str, from_id: str, from_name: str, to_id: 
             }
         ],
     }
+
+
+def flagged_history(history_id: str, created: str, flagged: bool) -> dict:
+    item = {
+        "field": "Flagged",
+        "fieldtype": "custom",
+        "fieldId": "customfield_10021",
+    }
+    if flagged:
+        item.update({"to": "[10019]", "toString": "Impediment"})
+    else:
+        item.update({"from": "[10019]", "fromString": "Impediment", "to": "", "toString": ""})
+    return {"id": history_id, "created": created, "items": [item]}

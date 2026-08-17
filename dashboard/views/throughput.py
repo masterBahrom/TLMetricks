@@ -17,7 +17,7 @@ def render(data: DashboardData, filters: FilterState) -> None:
 
     tab_daily, tab_weekly, tab_monthly = st.tabs(["Daily", "Weekly", "Monthly"])
 
-    for tab, granularity in zip([tab_daily, tab_weekly, tab_monthly], ["daily", "weekly", "monthly"], strict=True):
+    for tab, granularity in zip([tab_daily, tab_weekly, tab_monthly], ["daily", "weekly", "monthly"]):
         df = throughput_dataframe(data, granularity)
         with tab:
             if df.empty:
@@ -29,7 +29,7 @@ def render(data: DashboardData, filters: FilterState) -> None:
             )
             counts = df["Count"].tolist()
             rolling = charts.rolling_average(counts, window=3)
-            trend_x = [label for label, value in zip(df["Period"], rolling, strict=True) if value is not None]
+            trend_x = [label for label, value in zip(df["Period"], rolling) if value is not None]
             trend_y = [value for value in rolling if value is not None]
             if trend_y:
                 st.plotly_chart(
